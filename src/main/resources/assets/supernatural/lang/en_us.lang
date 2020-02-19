@@ -1,0 +1,255 @@
+#Food
+item.apple_juice.name=Apple Juice
+item.apple_pie.name=Apple Pie
+item.berry_juice.name=Berry Juice
+item.berry_pie.name=Berry Pie
+item.bad_boy.name=Bad Boy
+
+#Misc Items
+item.blank_slate_tablet.name=Blank Slate Tablet
+item.blank_basalt_tablet.name=Blank Basalt Tablet
+item.smoldering_coals.name=Smoldering Coals
+item.lucky_clover.name=Lucky Clover
+item.guano.name=Guano
+item.ectoplasm.name=Ectoplasm
+item.grinder.name=Grinder
+
+#Materials
+item.golden_fleece.name=Golden Fleece
+item.yeti_fur.name=Yeti Fur
+item.stymphalian_feather.name=Stymphalian Feather
+item.phoenix_feather.name=Phoenix Feather
+item.manticore_leather.name=Manticore Leather
+item.manticore_stinger.name=Manticore Stinger
+item.chimera_hide.name=Chimera Hide
+item.chimera_flame_gland.name=Chimera Flame Gland
+item.wither_bone.name=Withered Bone
+item.bat_wing.name=Bat Wing
+item.werewolf_hide.name=Werewolf Hide
+item.arachne_chitin.name=Arachne Chitin
+
+#Ingots
+item.silver_ingot.name=Silver Ingot
+item.copper_ingot.name=Copper Ingot
+item.bronze_ingot.name=Bronze Ingot
+item.lead_ingot.name=Lead Ingot
+item.tin_ingot.name=Tin Ingot
+item.zinc_ingot.name=Zinc Ingot
+item.brass_ingot.name=Brass Ingot
+item.consecrated_iron_ingot.name=Consecrated Iron Ingot
+item.phoenix_glass.name=Phoenix Glass
+
+#Nuggets
+item.silver_nugget.name=Silver Nugget
+item.copper_nugget.name=Copper Nugget
+item.bronze_nugget.name=Bronze Nugget
+item.lead_nugget.name=Lead Nugget
+item.tin_nugget.name=Tin Nugget
+item.zinc_nugget.name=Zinc Nugget
+item.brass_nugget.name=Brass Nugget
+item.consecrated_iron_nugget.name=Consecrated Iron Nugget
+item.ender_nugget.name=Ender Nugget
+
+#Dusts
+item.silver_dust.name=Silver Dust
+item.copper_dust.name=Copper Dust
+item.bronze_dust.name=Bronze Dust
+item.lead_dust.name=Lead Dust
+item.tin_dust.name=Tin Dust
+item.zinc_dust.name=Zinc Dust
+item.brass_dust.name=Brass Dust
+item.consecrated_iron_dust.name=Consecrated Iron Dust
+item.gold_dust.name=Gold Dust
+item.salt.name=Salt
+item.phoenix_ash.name=Phoenix Ash
+item.sulfur.name=Sulfur
+
+#"Books"
+item.hunters_journal.name=Hunter's Journal
+item.monster_notes.name=Monster Notes
+
+#Vials
+item.lambs_blood_vial.name=Vial of Lamb's Blood
+item.fresh_water_vial.name=Vial of Fresh Water
+item.griffin_tears_vial.name=Vial of Griffin Tears
+item.holy_water_vial.name=Vial of Holy Water
+item.aswang_oil_vial.name=Vial of Aswang Oil
+item.mercury_vial.name=Vial of Mercury
+item.troll_blood_vial.name=Vial of Troll Blood
+item.phoenix_tear_vial.name=Vial of Phoenix Tears
+item.manticore_venom_vial.name=Vial of Manticore Venom
+item.kraken_ink_vial.name=Vial of Kraken Ink
+
+#Plants + Seeds
+item.rosemary.name=Rosemary
+item.sage.name=Sage
+item.ancient_spices.name=Ancient Spices
+item.rosemary_seeds.name=Rosemary Seeds
+item.sage_seeds.name=Sage Seeds
+item.ancient_spice_seeds.name=Ancient Spice Seeds
+
+#Vanilla Essence
+item.bat_essence.name=Essence of Bat
+item.blaze_essence.name=Essence of Blaze
+item.cave_spider_essence.name=Essence of Cave Spider
+item.chicken_essence.name=Essence of Chicken
+item.cow_essence.name=Essence of Cow
+item.creeper_essence.name=Essence of Creeper
+item.elder_guardian_essence.name=Essence of Elder Guardian
+item.ender_dragon_essence.name=Essence of Ender Dragon
+item.enderman_essence.name=Essence of Enderman
+item.endermite_essence.name=Essence of Endermite
+item.evoker_essence.name=Essence of Evoker
+item.ghast_essence.name=Essence of Ghast
+item.guardian_essence.name=Essence of Guardian
+item.horse_essence.name=Essence of Horse
+item.llama_essence.name=Essence of Llama
+item.magma_cube_essence.name=Essence of Magma Cube
+item.mooshroom_essence.name=Essence of Mooshroom
+item.pig_essence.name=Essence of Pig
+item.polar_bear_essence.name=Essence of Polar Bear
+item.rabbit_essence.name=Essence of Rabbit
+item.sheep_essence.name=Essence of Sheep
+item.shulker_essence.name=Essence of Shulker
+item.silverfish_essence.name=Essence of Silverfish
+item.skeleton_essence.name=Essence of Skeleton
+item.slime_essence.name=Essence of Slime
+item.spider_essence.name=Essence of Spider
+item.squid_essence.name=Essence of Squid
+item.stray_essence.name=Essence of Stray
+item.vex_essence.name=Essence of Vex
+item.villager_essence.name=Essence of Villager
+item.vindicator_essence.name=Essence of Vindicator
+item.witch_essence.name=Essence of Witch
+item.wither_essence.name=Essence of Wither
+item.wither_skeleton_essence.name=Essence of Wither Skeleton
+item.wolf_essence.name=Essence of Wolf
+item.zombie_essence.name=Essence of Zombie
+item.zombie_pigman_essence.name=Essence of Zombie Pigman
+item.iron_golem_essence.name=Essence of Iron Golem
+item.snow_golem_essence.name=Essence of Snow Golem
+
+#Mod Essences
+
+#Weapons
+item.silver_dagger.name=Silver Dagger
+item.gold_dagger.name=Gold Dagger
+item.stone_dagger.name=Stone Dagger
+item.iron_dagger.name=Iron Dagger
+item.consecrated_iron_dagger.name=Consecrated Iron Dagger
+item.bamboo_dagger.name=Bamboo Dagger
+item.brass_dagger.name=Brass Dagger
+item.copper_dagger.name=Copper Dagger
+item.lead_dagger.name=Lead Dagger
+item.manticore_stinger_dagger.name=Manticore Stinger Dagger
+item.phoenix_glass_dagger.name=Phoenix Glass Dagger
+item.silver_katana.name=Silver Katana
+item.iron_katana.name=Iron Katana
+item.consecrated_iron_katana.name=Consecrated Iron Katana
+item.phoenix_glass_katana.name=Phoenix Glass Katana
+item.whip.name=Whip
+item.aswang_whip.name=Aswang Whip
+item.mirror.name=Mirror
+item.blowpipe.name=Blowpipe
+
+#Armors
+item.helmet_silver.name=Silver Helmet
+item.chestplate_silver.name=Silver Chestplate
+item.leggings_silver.name=Silver Leggings
+item.boots_silver.name=Silver Boots
+item.helmet_tin.name=Tin Helmet
+item.chestplate_tin.name=Tin Chestplate
+item.leggings_tin.name=Tin Leggings
+item.boots_tin.name=Tin Boots
+item.helmet_zinc.name=Zinc Helmet
+item.chestplate_zinc.name=Zinc Chestplate
+item.leggings_zinc.name=Zinc Leggings
+item.boots_zinc.name=Zinc Boots
+item.helmet_copper.name=Copper Helmet
+item.chestplate_copper.name=Copper Chestplate
+item.leggings_copper.name=Copper Leggings
+item.boots_copper.name=Copper Boots
+item.helmet_bronze.name=Bronze Helmet
+item.chestplate_bronze.name=Bronze Chestplate
+item.leggings_bronze.name=Bronze Leggings
+item.boots_bronze.name=Bronze Boots
+item.helmet_brass.name=Brass Helmet
+item.chestplate_brass.name=Brass Chestplate
+item.leggings_brass.name=Brass Leggings
+item.boots_brass.name=Brass Boots
+item.helmet_ciron.name=Consecrated Iron Helmet
+item.chestplate_ciron.name=Consecrated Iron Chestplate
+item.leggings_ciron.name=Consecrated Iron Leggings
+item.boots_ciron.name=Consecrated Iron Boots
+item.helmet_lead.name=Lead Helmet
+item.chestplate_lead.name=Lead Chestplate
+item.leggings_lead.name=Lead Leggings
+item.boots_lead.name=Lead Boots
+
+#Blocks
+tile.basalt.name=Basalt
+tile.basalt_smooth.name=Smooth Basalt
+tile.slate.name=Slate
+tile.slate_smooth.name=Smooth Slate
+tile.quartzite.name=Quartzite
+tile.quartzite_smooth.name=Smooth Quartzite
+
+#tools
+item.brass_pickaxe.name=Brass Pickaxe
+item.brass_axe.name=Brass Axe
+item.brass_hoe.name=Brass Hoe
+item.brass_shovel.name=Brass Shovel
+item.brass_sword.name=Brass Sword
+item.bronze_pickaxe.name=Bronze Pickaxe
+item.bronze_axe.name=Bronze Axe
+item.bronze_hoe.name=Bronze Hoe
+item.bronze_shovel.name=Bronze Shovel
+item.bronze_sword.name=Bronze Sword
+item.copper_pickaxe.name=Copper Pickaxe
+item.copper_axe.name=Copper Axe
+item.copper_hoe.name=Copper Hoe
+item.copper_shovel.name=Copper Shovel
+item.copper_sword.name=Copper Sword
+item.ciron_pickaxe.name=Consecrated Iron Pickaxe
+item.ciron_axe.name=Consecrated Iron Axe
+item.ciron_hoe.name=Consecrated Iron Hoe
+item.ciron_shovel.name=Consecrated Iron Shovel
+item.ciron_sword.name=Consecrated Iron Sword
+item.zinc_pickaxe.name=Zinc Pickaxe
+item.zinc_axe.name=Zinc Axe
+item.zinc_hoe.name=Zinc Hoe
+item.zinc_shovel.name=Zinc Shovel
+item.zinc_sword.name=Zinc Sword
+item.tin_pickaxe.name=Tin Pickaxe
+item.tin_axe.name=Tin Axe
+item.tin_hoe.name=Tin Hoe
+item.tin_shovel.name=Tin Shovel
+item.tin_sword.name=Tin Sword
+item.lead_pickaxe.name=Lead Pickaxe
+item.lead_axe.name=Lead Axe
+item.lead_hoe.name=Lead Hoe
+item.lead_shovel.name=Lead Shovel
+item.lead_sword.name=Lead Sword
+item.silver_pickaxe.name=Silver Pickaxe
+item.silver_axe.name=Silver Axe
+item.silver_hoe.name=Silver Hoe
+item.silver_shovel.name=Silver Shovel
+item.silver_sword.name=Silver Sword
+
+#Ores
+tile.silver_ore.name=Silver Ore
+tile.copper_ore.name=Copper Ore
+tile.lead_ore.name=Lead Ore
+tile.tin_ore.name=Tin Ore
+tile.zinc_ore.name=Zinc Ore
+tile.cinnabar_ore.name=Cinnabar Ore
+
+#Machines
+tile.essence_well.name=Essence Well
+container.essence_well.name=Essence Well
+
+#Tabs
+itemGroup.SupernaturalItemsTab=Supernatural Items
+itemGroup.SupernaturalBlocksTab=Supernatural Blocks
+itemGroup.SupernaturalEssencesTab=Supernatural Essences
+container.essence_well=Essence Well

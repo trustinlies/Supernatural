@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:silver_ingot"
+    }
+
+  ],
+  "result":
+  {
+    "item": "supernatural:silver_nugget",
+    "count": 9,
+    "data": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:lead_ingot"
+    }
+
+  ],
+  "result":
+  {
+    "item": "supernatural:lead_nugget",
+    "count": 9,
+    "data": 0
+  }
+}

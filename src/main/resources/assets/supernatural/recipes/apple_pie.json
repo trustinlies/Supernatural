@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#E#",
+        "AAA",
+        "WWW"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:sugar"
+        },
+        "E": {
+            "item": "minecraft:egg"
+        },
+        "A": {
+            "item": "minecraft:apple"
+        },
+        "W": {
+            "item": "minecraft:wheat"
+        }
+    },
+    "result": {
+        "item": "supernatural:apple_pie",
+        "count": 2
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:bronze_ingot"
+    }
+
+  ],
+  "result":
+  {
+    "item": "supernatural:bronze_nugget",
+    "count": 9,
+    "data": 0
+  }
+}

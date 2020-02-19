@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:ender_nugget"
+    },
+    {
+      "item": "supernatural:ender_nugget"
+    },
+    {
+      "item": "supernatural:ender_nugget"
+    },
+    {
+      "item": "supernatural:ender_nugget"
+    }
+  ],
+  "result":
+  {
+    "item": "minecraft:ender_pearl",
+    "count": 1,
+    "data": 0
+  }
+}

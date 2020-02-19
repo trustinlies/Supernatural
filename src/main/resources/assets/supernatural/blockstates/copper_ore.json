@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "supernatural:ore/copper_ore" }
+  }
+}

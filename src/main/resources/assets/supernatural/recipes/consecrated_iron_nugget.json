@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:consecrated_iron_ingot"
+    }
+
+  ],
+  "result":
+  {
+    "item": "supernatural:consecrated_iron_nugget",
+    "count": 9,
+    "data": 0
+  }
+}

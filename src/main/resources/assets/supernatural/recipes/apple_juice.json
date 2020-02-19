@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        " A ",
+        " G "
+    ],
+    "key": {
+        "#": {
+            "item": "supernatural:grinder"
+        },
+        "A": {
+            "item": "minecraft:apple"
+        },
+        "G": {
+            "item": "minecraft:glass_bottle"
+        }
+    },
+    "result": {
+        "item": "supernatural:apple_juice",
+        "count": 1
+    }
+}

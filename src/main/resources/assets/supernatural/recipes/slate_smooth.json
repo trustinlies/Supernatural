@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:slate"
+    },
+    {
+      "item": "supernatural:slate"
+    },
+    {
+      "item": "supernatural:slate"
+    },
+    {
+      "item": "supernatural:slate"
+    }
+  ],
+  "result":
+  {
+    "item": "supernatural:slate_smooth",
+    "count": 4,
+    "data": 0
+  }
+}

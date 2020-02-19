@@ -1,0 +1,13 @@
+{
+  "variants":
+  {
+    "burning=false, facing=north": {"model": "supernatural:machines/essence_well"},
+    "burning=false, facing=east": {"model": "supernatural:machines/essence_well", "y": 90},
+    "burning=false, facing=south": {"model": "supernatural:machines/essence_well", "y": 180},
+    "burning=false, facing=west": {"model": "supernatural:machines/essence_well", "y": 270},
+    "burning=true, facing=north": {"model": "supernatural:machines/essence_well_on"},
+    "burning=true, facing=east": {"model": "supernatural:machines/essence_well_on", "y": 90},
+    "burning=true, facing=south": {"model": "supernatural:machines/essence_well_on", "y": 180},
+    "burning=true, facing=west": {"model": "supernatural:machines/essence_well_on", "y": 270}
+  }
+}

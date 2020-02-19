@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures":
+  {
+    "layer0": "supernatural:items/weapons/bronze_sword"
+  }
+}

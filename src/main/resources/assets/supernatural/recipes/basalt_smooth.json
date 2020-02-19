@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+
+  "ingredients": [
+    {
+      "item": "supernatural:basalt"
+    },
+    {
+      "item": "supernatural:basalt"
+    },
+    {
+      "item": "supernatural:basalt"
+    },
+    {
+      "item": "supernatural:basalt"
+    }
+  ],
+  "result":
+  {
+    "item": "supernatural:basalt_smooth",
+    "count": 4,
+    "data": 0
+  }
+}
