@@ -3,10 +3,9 @@ package com.trustinlies.supernatural;
 import com.trustinlies.supernatural.init.BlockInit;
 import com.trustinlies.supernatural.proxy.CommonProxy;
 import com.trustinlies.supernatural.recipes.SmeltingRecipes;
-import com.trustinlies.supernatural.recipes.WellRecipes;
 import com.trustinlies.supernatural.tabs.CreativeTabsSupernatural;
 import com.trustinlies.supernatural.util.Reference;
-import com.trustinlies.supernatural.util.objects.blocks.essencewell.EssenceWellTileEntity;
+import com.trustinlies.supernatural.util.handlers.RegistryHandler;
 import com.trustinlies.supernatural.world.gen.Ores;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -40,6 +39,9 @@ public class Main {
         logger = event.getModLog();
         System.out.println(("PreInit"));
         GameRegistry.registerWorldGenerator(new Ores(), 4);
+        System.out.println("World Generation Registered");
+        RegistryHandler.preInitRegistries();
+        System.out.println("Pre Init Registry Complete");
 
     }
 
@@ -50,6 +52,9 @@ public class Main {
         logger.info("Basalt >> {}", BlockInit.BASALT.getRegistryName());
         System.out.println(("Init"));
         SmeltingRecipes.init();
+        System.out.println("Smelting Registries Initiated");
+        RegistryHandler.initRegistries();
+        System.out.println("Init Registry Complete");
 
     }
 
@@ -57,6 +62,8 @@ public class Main {
     public void postInit(FMLPostInitializationEvent event){
 
         System.out.println(("PostInit"));
+        RegistryHandler.postInitRegistries();
+        System.out.println("Post Init Registry Complete");
 
     }
 

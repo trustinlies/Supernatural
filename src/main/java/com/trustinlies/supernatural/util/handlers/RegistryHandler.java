@@ -5,7 +5,7 @@ import com.trustinlies.supernatural.init.BlockInit;
 import com.trustinlies.supernatural.init.ItemInit;
 import com.trustinlies.supernatural.util.Reference;
 import com.trustinlies.supernatural.util.interfaces.IHasModel;
-import com.trustinlies.supernatural.util.objects.blocks.essencewell.EssenceWellTileEntity;
+import com.trustinlies.supernatural.util.objects.blocks.essencewell.TileEntityEssenceWell;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -51,6 +51,7 @@ public class RegistryHandler {
     public static void onBlockRegister(RegistryEvent.Register<Block> event){
 
         event.getRegistry().registerAll(BlockInit.BLOCKS.toArray(new Block[0]));
+        GameRegistry.registerTileEntity(TileEntityEssenceWell.class, essenceWellGuiTextures);
 
     }
 
@@ -62,7 +63,6 @@ public class RegistryHandler {
     public static void initRegistries()
     {
         NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
-        GameRegistry.registerTileEntity(EssenceWellTileEntity.class, essenceWellGuiTextures);
 
     }
 

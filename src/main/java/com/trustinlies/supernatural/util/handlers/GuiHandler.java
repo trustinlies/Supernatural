@@ -1,8 +1,9 @@
 package com.trustinlies.supernatural.util.handlers;
 
-import com.trustinlies.supernatural.init.BlockInit;
 import com.trustinlies.supernatural.util.Reference;
-import com.trustinlies.supernatural.util.objects.gui.GuiEssenceWell;
+import com.trustinlies.supernatural.util.objects.blocks.essencewell.ContainerEssenceWell;
+import com.trustinlies.supernatural.util.objects.blocks.essencewell.GuiEssenceWell;
+import com.trustinlies.supernatural.util.objects.blocks.essencewell.TileEntityEssenceWell;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntity;
@@ -22,8 +23,8 @@ public class GuiHandler implements IGuiHandler {
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity tileEntity = world.getTileEntity(new BlockPos(x,y,z));
         if (tileEntity != null){
-            if(ID == Reference.GUI_ENUM.Essence_Well.ordinal()){
-                return new GuiEssenceWell(player.inventory, (IInventory)tileEntity);
+            if(ID == Reference.GUI_ESSENCE_WELL){
+                return new ContainerEssenceWell(player.inventory, (TileEntityEssenceWell)world.getTileEntity(new BlockPos(x,y,z)));
             }
         }
         return null;
@@ -34,8 +35,8 @@ public class GuiHandler implements IGuiHandler {
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity tileEntity = world.getTileEntity(new BlockPos(x,y,z));
         if (tileEntity != null){
-            if(ID == Reference.GUI_ENUM.Essence_Well.ordinal()){
-                return new GuiEssenceWell(player.inventory, (IInventory)tileEntity);
+            if(ID == Reference.GUI_ESSENCE_WELL){
+                return new GuiEssenceWell(player.inventory, (TileEntityEssenceWell)world.getTileEntity(new BlockPos(x,y,z)));
             }
         }
         return null;

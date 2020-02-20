@@ -1,6 +1,6 @@
 package com.trustinlies.supernatural.util.objects.blocks.essencewell;
 
-import com.trustinlies.supernatural.util.objects.blocks.EssenceWell;
+import com.trustinlies.supernatural.recipes.EssenceWellRecipes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -11,194 +11,151 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerEssenceWell extends Container {
 
-    private final IInventory tileEssenceWell;
-    private final int sizeInventory;
-    private int ticksFocusingItemSoFar;
-    private int ticksPerItem;
-    private int timeCanFocus;
+    private final IInventory tileWell;
+    private int cookTime, totalCookTime, wellBurnTime, currentItemBurnTime;
 
-    public ContainerEssenceWell(InventoryPlayer playerInv, IInventory iInventory){
-        System.out.println("ContainerEssenceWell constructor()");
+    public ContainerEssenceWell(InventoryPlayer playerInv, IInventory wellInventory){
+        this.tileWell = wellInventory;
+        this.addSlotToContainer(new Slot(wellInventory, 0, 56, 17));
+        this.addSlotToContainer(new Slot(wellInventory, 1, 56, 53));
+        this.addSlotToContainer(new SlotEssenceWellOutput(playerInv.player, wellInventory, 2, 116, 35));
 
-        tileEssenceWell = iInventory;
-        sizeInventory = tileEssenceWell.getSizeInventory();
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_1.ordinal(), 89, 10));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_2.ordinal(), 107, 10));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_3.ordinal(), 125, 19));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_4.ordinal(), 134, 37));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_5.ordinal(), 134, 55));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_6.ordinal(), 125, 73));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_7.ordinal(), 107, 82));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_8.ordinal(), 89, 82));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_9.ordinal(), 71, 82));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_10.ordinal(), 53, 82));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_11.ordinal(), 35, 73));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_12.ordinal(), 26, 55));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_13.ordinal(), 26, 37));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_14.ordinal(), 35, 19));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_15.ordinal(), 53, 10));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.INPUT_SLOT_16.ordinal(), 71, 10));
-        addSlotToContainer(new Slot(tileEssenceWell, EssenceWellTileEntity.slotEnum.OUTPUT_SLOT.ordinal(), 80, 46));
-
-        int i;
-        for (i = 0; i < 3; ++i)
-        {
-            for (int j = 0; j < 9; ++j)
-            {
-                addSlotToContainer(new Slot(playerInv, j+i*9+9,
-                        8+j*18, 84+i*18));
+        for(int i = 0 ; i < 3; i++){
+            for (int j = 0; j < 9; ++j){
+                this.addSlotToContainer(new Slot(playerInv, j + i *9 + 9, 8+j*18, 84+i*18));
             }
         }
 
-        // add hotbar slots
-        for (i = 0; i < 9; ++i)
-        {
-            addSlotToContainer(new Slot(playerInv, i, 8 + i * 18,
-                    142));
+        for(int k = 0; k > 9 ; k++){
+            System.out.println("Adding hotbar slot " + k);
+            this.addSlotToContainer(new Slot(playerInv, k, 8+k*18, 142));
         }
+
     }
 
-
+    @Override
+    public void addListener(IContainerListener listener) {
+        super.addListener(listener);
+        listener.sendAllWindowProperties(this, this.tileWell);
+    }
 
     @Override
     public void detectAndSendChanges() {
         super.detectAndSendChanges();
-        for (IContainerListener listener : this.listeners) {
-            if (ticksFocusingItemSoFar != tileEssenceWell.getField(2))
-                listener.sendWindowProperty(this, 2, tileEssenceWell.getField(2));
-            if (timeCanFocus != tileEssenceWell.getField(0))
-                listener.sendWindowProperty(this, 0, tileEssenceWell.getField(0));
-            if (ticksPerItem!= tileEssenceWell.getField(1))
-                listener.sendWindowProperty(this, 1, tileEssenceWell.getField(3));
+        for (int i = 0; i < this.listeners.size(); ++i)
+        {
+            System.out.println("Detecting Changes");
+            IContainerListener icontainerlistener = this.listeners.get(i);
 
+            if (this.cookTime != this.tileWell.getField(2))
+            {
+                icontainerlistener.sendWindowProperty(this, 2, this.tileWell.getField(2));
+            }
+
+            if (this.wellBurnTime != this.tileWell.getField(0))
+            {
+                icontainerlistener.sendWindowProperty(this, 0, this.tileWell.getField(0));
+            }
+
+            if (this.currentItemBurnTime != this.tileWell.getField(1))
+            {
+                icontainerlistener.sendWindowProperty(this, 1, this.tileWell.getField(1));
+            }
+
+            if (this.totalCookTime != this.tileWell.getField(3))
+            {
+                icontainerlistener.sendWindowProperty(this, 3, this.tileWell.getField(3));
+            }
         }
 
-        ticksFocusingItemSoFar = tileEssenceWell.getField(2);
-        timeCanFocus = tileEssenceWell.getField(0);
-        ticksPerItem = tileEssenceWell.getField(3);
+        this.cookTime = this.tileWell.getField(2);
+        this.wellBurnTime = this.tileWell.getField(0);
+        this.currentItemBurnTime = this.tileWell.getField(1);
+        this.totalCookTime = this.tileWell.getField(3);
     }
 
     @Override
-    public void updateProgressBar(int id, int data) {
-        tileEssenceWell.setField(id, data);
+    public void updateProgressBar(int id, int data)
+    {
+        this.tileWell.setField(id, data);
     }
 
     @Override
-    public boolean canInteractWith(EntityPlayer playerIn) {
-        return tileEssenceWell.isUsableByPlayer(playerIn);
+    public boolean canInteractWith(EntityPlayer playerIn)
+    {
+        return  this.tileWell.isUsableByPlayer(playerIn);
     }
 
     @Override
-    public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+    public ItemStack transferStackInSlot(EntityPlayer playerIn, int index)
+    {
         ItemStack itemstack = ItemStack.EMPTY;
-        Slot slot = (Slot) this.inventorySlots.get(index);
-        if (slot != null && slot.getHasStack()) {
+        Slot slot = this.inventorySlots.get(index);
+
+        if (slot != null && slot.getHasStack())
+        {
             ItemStack itemstack1 = slot.getStack();
             itemstack = itemstack1.copy();
-            if (index < 17) {
-                if (!this.mergeItemStack(itemstack1, 17, this.inventorySlots.size(), true)) {
+
+            if (index == 2)
+            {
+                if (!this.mergeItemStack(itemstack1, 3, 39, true))
+                {
                     return ItemStack.EMPTY;
                 }
+
                 slot.onSlotChange(itemstack1, itemstack);
-            } else if (!this.mergeItemStack(itemstack1, 0, 17, false)) {
-                if (index < 17 + 27) {
-                    if (!this.mergeItemStack(itemstack1, 17 + 27, this.inventorySlots.size(), true)) {
-                        return ItemStack.EMPTY;
-                    }
-                } else {
-                    if (!this.mergeItemStack(itemstack1, 17, 17 + 27, false)) {
+            }
+            else if (index != 1 && index != 0)
+            {
+                if (!EssenceWellRecipes.instance().getCookingResult(itemstack1).isEmpty())
+                {
+                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
+                    {
                         return ItemStack.EMPTY;
                     }
                 }
+                else if (TileEntityEssenceWell.isItemFuel(itemstack1))
+                {
+                    if (!this.mergeItemStack(itemstack1, 1, 2, false))
+                    {
+                        return ItemStack.EMPTY;
+                    }
+                }
+                else if (index >= 3 && index < 30)
+                {
+                    if (!this.mergeItemStack(itemstack1, 30, 39, false))
+                    {
+                        return ItemStack.EMPTY;
+                    }
+                }
+                else if (index >= 30 && index < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
+                {
+                    return ItemStack.EMPTY;
+                }
+            }
+            else if (!this.mergeItemStack(itemstack1, 3, 39, false))
+            {
                 return ItemStack.EMPTY;
             }
-            if (itemstack1.getCount() == 0) {
+
+            if (itemstack1.isEmpty())
+            {
                 slot.putStack(ItemStack.EMPTY);
-            } else {
+            }
+            else
+            {
                 slot.onSlotChanged();
             }
-            if (itemstack1.getCount() == itemstack.getCount()) {
+
+            if (itemstack1.getCount() == itemstack.getCount())
+            {
                 return ItemStack.EMPTY;
             }
+
             slot.onTake(playerIn, itemstack1);
         }
+
         return itemstack;
-    }
-    @Override
-    protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
-        boolean flag = false;
-        int i = startIndex;
-        if (reverseDirection) {
-            i = endIndex - 1;
-        }
-        if (stack.isStackable()) {
-            while (!stack.isEmpty()) {
-                if (reverseDirection) {
-                    if (i < startIndex) {
-                        break;
-                    }
-                } else if (i >= endIndex) {
-                    break;
-                }
-                Slot slot = this.inventorySlots.get(i);
-                ItemStack itemstack = slot.getStack();
-                if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
-                        && (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
-                        && ItemStack.areItemStackTagsEqual(stack, itemstack)) {
-                    int j = itemstack.getCount() + stack.getCount();
-                    int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
-                    if (j <= maxSize) {
-                        stack.setCount(0);
-                        itemstack.setCount(j);
-                        slot.putStack(itemstack);
-                        flag = true;
-                    } else if (itemstack.getCount() < maxSize) {
-                        stack.shrink(maxSize - itemstack.getCount());
-                        itemstack.setCount(maxSize);
-                        slot.putStack(itemstack);
-                        flag = true;
-                    }
-                }
-                if (reverseDirection) {
-                    --i;
-                } else {
-                    ++i;
-                }
-            }
-        }
-        if (!stack.isEmpty()) {
-            if (reverseDirection) {
-                i = endIndex - 1;
-            } else {
-                i = startIndex;
-            }
-            while (true) {
-                if (reverseDirection) {
-                    if (i < startIndex) {
-                        break;
-                    }
-                } else if (i >= endIndex) {
-                    break;
-                }
-                Slot slot1 = this.inventorySlots.get(i);
-                ItemStack itemstack1 = slot1.getStack();
-                if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
-                    if (stack.getCount() > slot1.getSlotStackLimit()) {
-                        slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
-                    } else {
-                        slot1.putStack(stack.splitStack(stack.getCount()));
-                    }
-                    slot1.onSlotChanged();
-                    flag = true;
-                    break;
-                }
-                if (reverseDirection) {
-                    --i;
-                } else {
-                    ++i;
-                }
-            }
-        }
-        return flag;
     }
 }

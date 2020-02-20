@@ -1,7 +1,7 @@
 package com.trustinlies.supernatural.init;
 
 import com.trustinlies.supernatural.util.objects.blocks.BlockBase;
-import com.trustinlies.supernatural.util.objects.blocks.EssenceWell;
+import com.trustinlies.supernatural.util.objects.blocks.essencewell.EssenceWell;
 import com.trustinlies.supernatural.util.objects.blocks.SpecialBlockBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -13,6 +13,7 @@ import java.util.List;
 public class BlockInit {
 
     public static final List<Block> BLOCKS = new ArrayList<Block>();
+    //public static final List<Block> TEBLOCKS = new ArrayList<Block>();
 
     //SpecialBlockBase (String name, Material material, float hardness, float resistance, float lightlevel, int opacity, float slippery, String toolClass, int level, SoundType sound)
 
@@ -34,7 +35,8 @@ public class BlockInit {
     public static final Block ORE_ZINC = new SpecialBlockBase("zinc_ore", Material.ROCK, 4.0F, 25.0F, 0.0F, 15, "pickaxe", 2, SoundType.STONE);
 
     //Crafting Stations
-    public static final Block ESSENCE_WELL = new EssenceWell("essence_well", Material.ROCK);
+    public static final Block ESSENCE_WELL_OFF = new EssenceWell("essence_well_off", false);
+    public static final Block ESSENCE_WELL_ON = new EssenceWell("essence_well_on", true);
     //public static final Block INCUBATOR = new BlockBase("incubator", Material.IRON);
     //public static final Block SOUL_GENERATOR = new BlockBase("soul_generator", Material.IRON);
     //public static final Block RUNE_INSCRIBER = new BlockBase("rune_inscriber", Material.WOOD);
