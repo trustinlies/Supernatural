@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "supernatural:blocks/portal",
+    "up": "supernatural:blocks/portal",
+    "north": "supernatural:blocks/bookshelf_darkoak",
+    "east": "supernatural:blocks/bookshelf_darkoak",
+    "south": "supernatural:blocks/bookshelf_darkoak",
+    "west": "supernatural:blocks/bookshelf_darkoak",
+    "particle": "supernatural:blocks/portal"
+  }
+}

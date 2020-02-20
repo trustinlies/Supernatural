@@ -1,0 +1,12 @@
+{
+  "parent": "supernatural:custom/soulgenerator",
+  "textures": {
+    "all": "supernatural:blocks/ritualbase",
+    "particle": "supernatural:blocks/ritualbase",
+    "0": "supernatural:blocks/ritualbase",
+    "1": "supernatural:blocks/ectoplasm_block",
+    "2": "supernatural:blocks/nether_star",
+    "3": "supernatural:blocks/basalt_smooth",
+    "5": "supernatural:blocks/dessence2"
+  }
+}

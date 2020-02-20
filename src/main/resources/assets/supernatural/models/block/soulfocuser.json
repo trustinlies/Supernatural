@@ -1,0 +1,12 @@
+{
+  "parent": "supernatural:custom/incubator",
+  "textures": {
+    "all": "supernatural:blocks/empty_focus",
+    "particle": "supernatural:blocks/empty_focus",
+    "0": "supernatural:blocks/empty_focus",
+    "1": "supernatural:blocks/obsidian",
+    "2": "supernatural:blocks/gold_block",
+    "3": "supernatural:blocks/emerald_block",
+    "4": "supernatural:blocks/trans_obsidian"
+  }
+}

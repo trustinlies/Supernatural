@@ -49,7 +49,10 @@ public class ItemInit {
     //public static final Item OBSIDIAN_SHARD = new ItemBase("obsidian_shard", "none");
     public static final Item OBSIDIAN_SOUL_GEM_EMPTY = new ItemBase("obsidian_soul_gem_empty", "none");
     //public static final Item OBSIDIAN_SOUL_GEM_FULL = new ItemBase("obsidian_soul_gem_full", "none");
+
+    //Foci
     public static final Item FOCUS_EMPTY = new ItemBase("focus_empty", "none");
+    public static final Item FOCUS_BAT = new ItemBase("focus_bat", "none");
 
     //Ingots
     public static final Item SILVER_INGOT = new ItemBase("silver_ingot", "none");

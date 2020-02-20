@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "supernatural:blocks/ectoplasm_block",
+    "particle": "supernatural:blocks/ectoplasm_block"
+  }
+}

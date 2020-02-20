@@ -1,5 +1,6 @@
 package com.trustinlies.supernatural.util.objects.blocks.essencewell;
 
+import com.trustinlies.supernatural.init.ItemInit;
 import com.trustinlies.supernatural.recipes.EssenceWellRecipes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -22,11 +23,12 @@ public class ContainerEssenceWell extends Container {
 
         for(int i = 0 ; i < 3; i++){
             for (int j = 0; j < 9; ++j){
+                System.out.println("Adding Inventory slot " + j);
                 this.addSlotToContainer(new Slot(playerInv, j + i *9 + 9, 8+j*18, 84+i*18));
             }
         }
 
-        for(int k = 0; k > 9 ; k++){
+        for(int k = 0; k < 9 ; k++){
             System.out.println("Adding hotbar slot " + k);
             this.addSlotToContainer(new Slot(playerInv, k, 8+k*18, 142));
         }
@@ -44,7 +46,7 @@ public class ContainerEssenceWell extends Container {
         super.detectAndSendChanges();
         for (int i = 0; i < this.listeners.size(); ++i)
         {
-            System.out.println("Detecting Changes");
+            //System.out.println("Detecting Changes");
             IContainerListener icontainerlistener = this.listeners.get(i);
 
             if (this.cookTime != this.tileWell.getField(2))
@@ -91,71 +93,54 @@ public class ContainerEssenceWell extends Container {
     {
         ItemStack itemstack = ItemStack.EMPTY;
         Slot slot = this.inventorySlots.get(index);
+        System.out.println("index: " + index);
 
-        if (slot != null && slot.getHasStack())
-        {
-            ItemStack itemstack1 = slot.getStack();
-            itemstack = itemstack1.copy();
+        //if(slot.getStack() == new ItemStack(ItemInit.FOCUS_EMPTY) || slot.getStack().getDisplayName().contains("_essence")) {
+            if (slot != null && slot.getHasStack()) {
+                ItemStack itemstack1 = slot.getStack();
+                itemstack = itemstack1.copy();
 
-            if (index == 2)
-            {
-                if (!this.mergeItemStack(itemstack1, 3, 39, true))
-                {
+                if (index == 2) {
+                    if (!this.mergeItemStack(itemstack1, 3, 39, true)) {
+                        return ItemStack.EMPTY;
+                    }
+
+                    slot.onSlotChange(itemstack1, itemstack);
+                } else if (index != 1 && index != 0) {
+                    if (!EssenceWellRecipes.instance().getCookingResult(itemstack1).isEmpty()) {
+                        if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    } else if (TileEntityEssenceWell.isItemFuel(itemstack1)) {
+                        if (!this.mergeItemStack(itemstack1, 1, 2, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    } else if (index >= 3 && index < 30) {
+                        if (!this.mergeItemStack(itemstack1, 30, 39, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    } else if (index >= 30 && index < 39 && !this.mergeItemStack(itemstack1, 3, 30, false)) {
+                        return ItemStack.EMPTY;
+                    }
+                } else if (!this.mergeItemStack(itemstack1, 3, 39, false)) {
                     return ItemStack.EMPTY;
                 }
 
-                slot.onSlotChange(itemstack1, itemstack);
-            }
-            else if (index != 1 && index != 0)
-            {
-                if (!EssenceWellRecipes.instance().getCookingResult(itemstack1).isEmpty())
-                {
-                    if (!this.mergeItemStack(itemstack1, 0, 1, false))
-                    {
-                        return ItemStack.EMPTY;
-                    }
+                if (itemstack1.isEmpty()) {
+                    slot.putStack(ItemStack.EMPTY);
+                } else {
+                    slot.onSlotChanged();
                 }
-                else if (TileEntityEssenceWell.isItemFuel(itemstack1))
-                {
-                    if (!this.mergeItemStack(itemstack1, 1, 2, false))
-                    {
-                        return ItemStack.EMPTY;
-                    }
-                }
-                else if (index >= 3 && index < 30)
-                {
-                    if (!this.mergeItemStack(itemstack1, 30, 39, false))
-                    {
-                        return ItemStack.EMPTY;
-                    }
-                }
-                else if (index >= 30 && index < 39 && !this.mergeItemStack(itemstack1, 3, 30, false))
-                {
+
+                if (itemstack1.getCount() == itemstack.getCount()) {
                     return ItemStack.EMPTY;
                 }
-            }
-            else if (!this.mergeItemStack(itemstack1, 3, 39, false))
-            {
-                return ItemStack.EMPTY;
+
+                slot.onTake(playerIn, itemstack1);
             }
 
-            if (itemstack1.isEmpty())
-            {
-                slot.putStack(ItemStack.EMPTY);
-            }
-            else
-            {
-                slot.onSlotChanged();
-            }
-
-            if (itemstack1.getCount() == itemstack.getCount())
-            {
-                return ItemStack.EMPTY;
-            }
-
-            slot.onTake(playerIn, itemstack1);
+            return itemstack;
         }
-
-        return itemstack;
-    }
+        //return itemstack;
+    //}
 }

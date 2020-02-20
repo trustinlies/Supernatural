@@ -23,7 +23,7 @@ public class EssenceWellRecipes {
 
     public EssenceWellRecipes(){
 
-        this.addCookingRecipe(new ItemStack(ItemInit.BAT_ESSENCE), new ItemStack(ItemInit.ZINC_INGOT), 0.6f);
+        this.addCookingRecipe(new ItemStack(ItemInit.BAT_ESSENCE), new ItemStack(ItemInit.FOCUS_BAT), 0.6f);
 
     }
 

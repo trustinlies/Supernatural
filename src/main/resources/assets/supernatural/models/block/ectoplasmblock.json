@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "supernatural:blocks/ectoplasm_block",
+    "up": "supernatural:blocks/ectoplasm_block",
+    "north": "supernatural:blocks/ectoplasm_block",
+    "east": "supernatural:blocks/ectoplasm_block",
+    "south": "supernatural:blocks/ectoplasm_block",
+    "west": "supernatural:blocks/ectoplasm_block",
+    "particle": "supernatural:blocks/ectoplasm_block"
+  }
+}

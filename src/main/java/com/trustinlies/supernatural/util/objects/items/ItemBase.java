@@ -21,7 +21,7 @@ public class ItemBase extends Item implements IHasModel {
         setRegistryName(name);
 
         //Set Creative Tab Based on name
-        if(name.contains("_essence")){
+        if(name.contains("_essence")||name.contains("focus_")||name.contains("soul_gem")){
             setCreativeTab(Main.ESSENCETAB);
         }
         else {
@@ -35,7 +35,7 @@ public class ItemBase extends Item implements IHasModel {
         if(keyword.contains("grinder")){
             this.setContainerItem(this);
         }
-        else if(keyword.contains("shiny")||name.contains("_essence")){
+        else if(keyword.contains("shiny")||name.contains("_essence")|| (name.contains("focus") && !name.equals("focus_empty")) || (name.contains("soul_gem") && !name.contains("empty")) ){
             SHINY.add(this);
         }
 
@@ -56,10 +56,12 @@ public class ItemBase extends Item implements IHasModel {
     @Override
     public void registerModels() {
         //Changes subfolder of model location based on name - For Organization
-        if(this.getUnlocalizedName().contains("_vial")){
+        String name = this.getUnlocalizedName();
+
+        if(name.contains("_vial")){
             Main.proxy.registerItemRenderer(this, 0, "inventory", "vials");
         }
-        else if(this.getUnlocalizedName().contains("_essence")){
+        else if(name.contains("_essence") || name.contains("focus_") || name.contains("soul_gem")){
             Main.proxy.registerItemRenderer(this, 0, "inventory", "essence");
         }
         else {

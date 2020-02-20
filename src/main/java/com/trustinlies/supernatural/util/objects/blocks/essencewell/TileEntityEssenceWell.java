@@ -57,7 +57,7 @@ public class TileEntityEssenceWell extends TileEntityLockable implements ISidedI
 
     @Override
     public ItemStack getStackInSlot(int index) {
-        System.out.println("Stack in slot " + this.wellItems.get(index).getDisplayName());
+        //System.out.println("Stack in slot " + this.wellItems.get(index).getDisplayName());
         return this.wellItems.get(index);
     }
 
@@ -150,7 +150,7 @@ public class TileEntityEssenceWell extends TileEntityLockable implements ISidedI
 
     @SideOnly(Side.CLIENT)
     public static boolean isBurning(IInventory inventory){
-        System.out.println(inventory.getField(0));
+        //System.out.println(inventory.getField(0));
         return inventory.getField(0) > 0;
     }
 
@@ -247,35 +247,35 @@ public class TileEntityEssenceWell extends TileEntityLockable implements ISidedI
 
             if (itemstack.isEmpty())
             {
-                System.out.println(RED + "No Recipe");
+                //System.out.println(RED + "No Recipe");
                 return false;
             }
-            else if(itemstack.getCount() >= 15){
-                System.out.println("Fewer than 16");
+            else if(this.wellItems.get(0).getCount() <= 15){
+                //System.out.println("Fewer than 16");
                 return false;
             }
             else{
                 ItemStack itemstack1 = this.wellItems.get(2);
-                System.out.println("Recipe found for " + itemstack1.getDisplayName());
+                //System.out.println("Recipe found for " + itemstack1.getDisplayName());
 
                 if (itemstack1.isEmpty())
                 {
-                    System.out.println("Can Focus");
+                    //System.out.println("Can Focus");
                     return true;
                 }
                 else if (!itemstack1.isItemEqual(itemstack))
                 {
-                    System.out.println("Something Else in output");
+                    //System.out.println("Something Else in output");
                     return false;
                 }
                 else if (itemstack1.getCount() + itemstack.getCount() <= this.getInventoryStackLimit() && itemstack1.getCount() + itemstack.getCount() <= itemstack1.getMaxStackSize())
                 {
-                    System.out.println("Same Result in Output");
+                    //System.out.println("Same Result in Output");
                     return true;
                 }
                 else
                 {
-                    System.out.println("Same Result in Output 2");
+                   //System.out.println("Same Result in Output 2");
                     return itemstack1.getCount() + itemstack.getCount() <= itemstack.getMaxStackSize();
                 }
             }
@@ -284,22 +284,21 @@ public class TileEntityEssenceWell extends TileEntityLockable implements ISidedI
 
     public void focusItem()
     {
-        if (this.canFocus())
-        {
+        if (this.canFocus()){
             ItemStack itemstack = this.wellItems.get(0);
             ItemStack itemstack1 = EssenceWellRecipes.instance().getCookingResult(itemstack);
             ItemStack itemstack2 = this.wellItems.get(2);
 
-            if (itemstack2.isEmpty())
-            {
-                this.wellItems.set(2, itemstack1.copy());
-            }
-            else if (itemstack2.getItem() == itemstack1.getItem())
-            {
-                itemstack2.grow(itemstack1.getCount());
-            }
+            if(itemstack.getCount() >=16) {
 
-            itemstack.shrink(16);
+                if (itemstack2.isEmpty()) {
+                    this.wellItems.set(2, itemstack1.copy());
+                } else if (itemstack2.getItem() == itemstack1.getItem()) {
+                    itemstack2.grow(itemstack1.getCount());
+                }
+
+                itemstack.shrink(16);
+            }
         }
     }
 
