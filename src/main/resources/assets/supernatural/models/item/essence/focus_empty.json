@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "supernatural:items/empty_focus"
+    "layer0": "supernatural:items/essences/empty_focus"
   }
 }

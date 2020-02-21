@@ -1,8 +1,12 @@
 package com.trustinlies.supernatural.proxy;
 
-import net.minecraft.client.Minecraft;
+import com.trustinlies.supernatural.util.capabilities.Mining;
+import com.trustinlies.supernatural.util.capabilities.CapabilityHandler;
+import com.trustinlies.supernatural.util.capabilities.IMining;
+import com.trustinlies.supernatural.util.capabilities.MiningStorage;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 
 public class CommonProxy {
 
@@ -11,10 +15,10 @@ public class CommonProxy {
 
     }
 
+    public void init(){
+        CapabilityManager.INSTANCE.register(IMining.class, new MiningStorage(), Mining::new);
 
-
-    public void openEssenceWell(){
-
+        MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
     }
 
 }

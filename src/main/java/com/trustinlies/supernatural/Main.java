@@ -1,15 +1,17 @@
 package com.trustinlies.supernatural;
 
+import com.trustinlies.supernatural.config.SkillsConfig;
 import com.trustinlies.supernatural.init.BlockInit;
 import com.trustinlies.supernatural.proxy.CommonProxy;
 import com.trustinlies.supernatural.recipes.SmeltingRecipes;
 import com.trustinlies.supernatural.tabs.CreativeTabsSupernatural;
 import com.trustinlies.supernatural.util.Reference;
+import com.trustinlies.supernatural.util.handlers.EventHandler;
 import com.trustinlies.supernatural.util.handlers.RegistryHandler;
 import com.trustinlies.supernatural.world.gen.Ores;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -33,7 +35,7 @@ public class Main {
     public static CreativeTabs BLOCKTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalBlocksTab", 2);
     public static CreativeTabs ESSENCETAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalEssencesTab", 3);
 
-    @EventHandler
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
         logger = event.getModLog();
@@ -42,10 +44,14 @@ public class Main {
         System.out.println("World Generation Registered");
         RegistryHandler.preInitRegistries();
         System.out.println("Pre Init Registry Complete");
+        MinecraftForge.EVENT_BUS.register(new EventHandler());
+        System.out.println("Block Break Handler Registered");
+        SkillsConfig.init(event.getSuggestedConfigurationFile());
+        System.out.println("Skills Config registered");
 
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
         // some example code
@@ -55,10 +61,11 @@ public class Main {
         System.out.println("Smelting Registries Initiated");
         RegistryHandler.initRegistries();
         System.out.println("Init Registry Complete");
+        proxy.init();
 
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event){
 
         System.out.println(("PostInit"));
@@ -67,7 +74,7 @@ public class Main {
 
     }
 
-    @EventHandler
+    @Mod.EventHandler
     public void serverInit(FMLServerStartingEvent event){
 
     }

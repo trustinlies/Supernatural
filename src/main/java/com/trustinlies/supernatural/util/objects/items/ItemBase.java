@@ -45,12 +45,7 @@ public class ItemBase extends Item implements IHasModel {
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack stack)
     {
-        if(SHINY.contains(stack.getItem())) {
-            return true;
-        }
-        else{
-            return false;
-        }
+        return SHINY.contains(stack.getItem());
     }
 
     @Override

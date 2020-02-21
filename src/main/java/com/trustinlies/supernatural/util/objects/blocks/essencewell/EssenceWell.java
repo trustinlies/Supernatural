@@ -47,7 +47,7 @@ public class EssenceWell extends BlockContainer implements IHasModel, ITileEntit
         if(name.equals("essence_well_off")) {
             setCreativeTab(Main.BLOCKTAB);
         }
-        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+        this.setDefaultState(this.blockState.getBaseState());//.withProperty(FACING, EnumFacing.NORTH));
         this.isBurning = isBurning;
 
         BlockInit.BLOCKS.add(this);
@@ -64,7 +64,7 @@ public class EssenceWell extends BlockContainer implements IHasModel, ITileEntit
 
     @Override
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-        this.setDefaultFacing(worldIn, pos, state);
+        //this.setDefaultFacing(worldIn, pos, state);
     }
 
     private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state){
@@ -93,7 +93,7 @@ public class EssenceWell extends BlockContainer implements IHasModel, ITileEntit
                 enumfacing = EnumFacing.WEST;
             }
 
-            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
+            worldIn.setBlockState(pos, state, 2);//.withProperty(FACING, enumfacing), 2);
         }
     }
 
@@ -105,13 +105,13 @@ public class EssenceWell extends BlockContainer implements IHasModel, ITileEntit
 
         if (active)
         {
-            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_ON.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_ON.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_ON.getDefaultState(), 3);//.withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_ON.getDefaultState(), 3);//.withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
         else
         {
-            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_OFF.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_OFF.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_OFF.getDefaultState(), 3);//.withProperty(FACING, iblockstate.getValue(FACING)), 3);
+            worldIn.setBlockState(pos, BlockInit.ESSENCE_WELL_OFF.getDefaultState(), 3);//.withProperty(FACING, iblockstate.getValue(FACING)), 3);
         }
 
         keepInventory = false;
@@ -132,12 +132,12 @@ public class EssenceWell extends BlockContainer implements IHasModel, ITileEntit
 
     @Override
     public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+        return this.getDefaultState();//.withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()));
+        worldIn.setBlockState(pos, state); //.withProperty(FACING, placer.getHorizontalFacing().getOpposite()));
 
         if(stack.hasDisplayName()){
             TileEntity tileEntity = worldIn.getTileEntity(pos);
@@ -186,32 +186,47 @@ public class EssenceWell extends BlockContainer implements IHasModel, ITileEntit
             enumFacing = EnumFacing.NORTH;
         }
 
-        return this.getDefaultState().withProperty(FACING, enumFacing);
+        return this.getDefaultState();//.withProperty(FACING, enumFacing);
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
-        return((EnumFacing)state.getValue(FACING)).getIndex();
+        return 0;//((EnumFacing)state.getValue(FACING)).getIndex();
     }
 
     @Override
     public IBlockState withRotation(IBlockState state, Rotation rot) {
-        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+        return state;//.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
     }
 
     @Override
     public IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
-        return state.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
+        return state;//.withRotation(mirrorIn.toRotation((EnumFacing)state.getValue(FACING)));
     }
 
     @Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[] {FACING});
+        return new BlockStateContainer(this);//new IProperty[] {FACING});
     }
 
     @Override
     public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT;
+        return BlockRenderLayer.SOLID;
+    }
+
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isFullBlock(IBlockState state) {
+        return false;
     }
 
     @Override

@@ -23,13 +23,13 @@ public class ContainerEssenceWell extends Container {
 
         for(int i = 0 ; i < 3; i++){
             for (int j = 0; j < 9; ++j){
-                System.out.println("Adding Inventory slot " + j);
+                //System.out.println("Adding Inventory slot " + j);
                 this.addSlotToContainer(new Slot(playerInv, j + i *9 + 9, 8+j*18, 84+i*18));
             }
         }
 
         for(int k = 0; k < 9 ; k++){
-            System.out.println("Adding hotbar slot " + k);
+            //System.out.println("Adding hotbar slot " + k);
             this.addSlotToContainer(new Slot(playerInv, k, 8+k*18, 142));
         }
 
