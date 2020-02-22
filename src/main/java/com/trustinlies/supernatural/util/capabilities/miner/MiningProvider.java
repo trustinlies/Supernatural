@@ -1,6 +1,5 @@
-package com.trustinlies.supernatural.util.capabilities;
+package com.trustinlies.supernatural.util.capabilities.miner;
 
-import com.trustinlies.supernatural.util.capabilities.IMining;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;

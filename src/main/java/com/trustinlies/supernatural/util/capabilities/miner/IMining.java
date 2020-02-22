@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities;
+package com.trustinlies.supernatural.util.capabilities.miner;
 
 public interface IMining {
 

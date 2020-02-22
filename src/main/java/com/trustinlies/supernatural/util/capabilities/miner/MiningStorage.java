@@ -1,6 +1,5 @@
-package com.trustinlies.supernatural.util.capabilities;
+package com.trustinlies.supernatural.util.capabilities.miner;
 
-import com.trustinlies.supernatural.util.capabilities.IMining;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTPrimitive;
 import net.minecraft.nbt.NBTTagInt;
@@ -12,7 +11,7 @@ public class MiningStorage implements Capability.IStorage<IMining> {
 
     @Override
     public NBTBase writeNBT(Capability<IMining> capability, IMining instance, EnumFacing side) {
-        return new NBTTagInt(instance.getLevel());
+        return new NBTTagInt(instance.getExp());
     }
 
     @Override
