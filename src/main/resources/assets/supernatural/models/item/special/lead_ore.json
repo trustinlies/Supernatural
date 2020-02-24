@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/silverore",
+  "parent": "supernatural:block/special/lead_ore",
   "display": {
     "thirdperson": {
       "rotation": [

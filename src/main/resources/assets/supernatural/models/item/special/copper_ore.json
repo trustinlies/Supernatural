@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/leadore",
+  "parent": "supernatural:block/special/copper_ore",
   "display": {
     "thirdperson": {
       "rotation": [

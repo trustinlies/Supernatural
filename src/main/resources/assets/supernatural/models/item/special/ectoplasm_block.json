@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/mercuryore",
+  "parent": "supernatural:block/special/ectoplasm_block",
   "display": {
     "thirdperson": {
       "rotation": [

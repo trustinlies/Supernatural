@@ -1,5 +1,5 @@
 {
   "variants": {
-    "normal": { "model": "supernatural:ore/cinnabar_ore" }
+    "normal": { "model": "supernatural:special/cinnabar_ore" }
   }
 }

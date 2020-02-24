@@ -43,17 +43,24 @@ public class SpecialBlockBase extends Block implements IHasModel {
 
     @Override
     public boolean isFullBlock(IBlockState state){
+        if(this.getUnlocalizedName().contains("ectoplasm")){
+            return false;
+        }
         return true;
     }
 
     @Override
     public boolean isFullCube(IBlockState state){
+        if(this.getUnlocalizedName().contains("ectoplasm")){
+            return false;
+        }
         return true;
     }
 
     private boolean canBlockStay(World world, BlockPos pos){
 
-        return world.getBlockState(pos.down()).isSideSolid(world, pos, EnumFacing.UP);
+        return true;
+        // return world.getBlockState(pos.down()).isSideSolid(world, pos, EnumFacing.UP);
 
     }
 
@@ -71,23 +78,27 @@ public class SpecialBlockBase extends Block implements IHasModel {
 
     @Override
     public BlockRenderLayer getBlockLayer() {
+        if(this.getUnlocalizedName().contains("ectoplasm")){
+            return BlockRenderLayer.TRANSLUCENT;
+        }
         return BlockRenderLayer.SOLID;
     }
 
-    /*@Override
+    @Override
     public boolean isOpaqueCube(IBlockState state) {
-        return true;
+        return !this.getUnlocalizedName().contains("ectoplasm");
     }
+
     //normal blocks dont need this, only translucent blocks
 
 
-    @Override
+    /*@Override
     public EnumBlockRenderType getRenderType(IBlockState state) {
-        return EnumBlockRenderType.MODEL
+        return EnumBlockRenderType.MODEL;
     }
     //this is only for non regular blocks
+*/
 
-    */
 
     @Override
     public boolean canSilkHarvest(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
@@ -97,7 +108,7 @@ public class SpecialBlockBase extends Block implements IHasModel {
     @Override
     public void registerModels(){
 
-        Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory", "ore");
+        Main.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "inventory", "special");
 
     }
 

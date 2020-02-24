@@ -1,5 +1,5 @@
 {
   "variants": {
-    "normal": { "model": "supernatural:ore/zinc_ore" }
+    "normal": { "model": "supernatural:special/zinc_ore" }
   }
 }

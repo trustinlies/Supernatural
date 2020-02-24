@@ -275,6 +275,7 @@ tile.slate.name=Slate
 tile.slate_smooth.name=Smooth Slate
 tile.quartzite.name=Quartzite
 tile.quartzite_smooth.name=Smooth Quartzite
+tile.ectoplasm_block.name=Ectoplasm Block
 
 
 #tools

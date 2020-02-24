@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/copperore",
+  "parent": "supernatural:block/special/tin_ore",
   "display": {
     "thirdperson": {
       "rotation": [

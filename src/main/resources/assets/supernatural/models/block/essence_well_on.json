@@ -2,7 +2,7 @@
   "parent": "supernatural:custom/essencewell",
   "textures": {
     "all": "supernatural:blocks/band",
-    "particle": "supernatural:blocks/band",
+    "particle": "supernatural:blocks/portal",
     "0": "supernatural:blocks/stonebrick_mossy",
     "1": "supernatural:blocks/portal"
   }

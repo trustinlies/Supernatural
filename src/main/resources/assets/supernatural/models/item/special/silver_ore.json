@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/zincore",
+  "parent": "supernatural:block/special/silver_ore",
   "display": {
     "thirdperson": {
       "rotation": [

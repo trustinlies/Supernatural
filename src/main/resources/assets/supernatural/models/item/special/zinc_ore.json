@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/ectoplasmblock",
+  "parent": "supernatural:block/special/zinc_ore",
   "display": {
     "thirdperson": {
       "rotation": [

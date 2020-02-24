@@ -2,7 +2,7 @@
   "parent": "supernatural:custom/essencewell",
   "textures": {
     "all": "supernatural:blocks/band",
-    "particle": "supernatural:blocks/band",
+    "particle": "supernatural:blocks/dessence2",
     "0": "supernatural:blocks/stonebrick_mossy",
     "1": "supernatural:blocks/dessence2"
   }

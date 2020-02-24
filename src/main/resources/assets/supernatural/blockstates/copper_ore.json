@@ -1,5 +1,5 @@
 {
   "variants": {
-    "normal": { "model": "supernatural:ore/copper_ore" }
+    "normal": { "model": "supernatural:special/copper_ore" }
   }
 }

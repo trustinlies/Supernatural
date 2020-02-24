@@ -1,5 +1,5 @@
 {
-  "parent": "supernatural:block/tinore",
+  "parent": "supernatural:block/special/cinnabar_ore",
   "display": {
     "thirdperson": {
       "rotation": [

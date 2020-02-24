@@ -7,17 +7,17 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.util.EnumHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class ItemInit {
 
-    public static final List<Item> ITEMS = new ArrayList<Item>();
+    public static final List<Item> ITEMS = new ArrayList<>();
 
-    //Material Groups
+    //Armor Material Groups
     public static final ItemArmor.ArmorMaterial ARMOR_SILVER = EnumHelper.addArmorMaterial("armor_silver", Reference.MOD_ID + ":silver", 500, new int[] {4, 7, 9, 5}, 25, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.5F);
     public static final ItemArmor.ArmorMaterial ARMOR_COPPER = EnumHelper.addArmorMaterial("armor_copper", Reference.MOD_ID + ":copper", 200, new int[] {4, 6, 8, 5}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.3F);
     public static final ItemArmor.ArmorMaterial ARMOR_TIN = EnumHelper.addArmorMaterial("armor_tin", Reference.MOD_ID + ":tin", 128, new int[] {2, 4, 7, 3}, 6, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0F);
@@ -27,6 +27,7 @@ public class ItemInit {
     public static final ItemArmor.ArmorMaterial ARMOR_CIRON = EnumHelper.addArmorMaterial("armor_ciron", Reference.MOD_ID + ":ciron", 500, new int[] {5, 8, 10, 6}, 40, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 7.0F);
     public static final ItemArmor.ArmorMaterial ARMOR_LEAD = EnumHelper.addArmorMaterial("armor_lead", Reference.MOD_ID + ":lead", 2000, new int[] {10, 15, 20, 10}, 30, SoundEvents.BLOCK_ANVIL_HIT, 10.0F);
 
+    //Tool Material Groups
     public static final Item.ToolMaterial TOOL_CIRON = EnumHelper.addToolMaterial("tool_ciron", 3, 500, 5.0F, 10.0F, 40);
     public static final Item.ToolMaterial TOOL_BRASS = EnumHelper.addToolMaterial("tool_brass", 2, 200, 5.0F, 6.0F, 29);
     public static final Item.ToolMaterial TOOL_BRONZE = EnumHelper.addToolMaterial("tool_bronze", 3, 250, 5.0F, 8.0F, 4);
@@ -37,8 +38,7 @@ public class ItemInit {
     public static final Item.ToolMaterial TOOL_ZINC = EnumHelper.addToolMaterial("tool_zinc", 2, 190, 5.0F, 4.0F, 9);
     public static final Item.ToolMaterial TOOL_PHOENIX = EnumHelper.addToolMaterial("tool_phoenix", 5, 1000, 7.0F, 16.0F, 50);
 
-    //Foods
-    //Pies give saturation effect for 30 seconds. Juice gives Movement Speed for 30 seconds.
+    //Foods - Pies give saturation effect for 30 seconds. Juice gives Movement Speed for 30 seconds.
     public static final Item APPLE_JUICE = new FoodBase("apple_juice", 3, 0.2F, false, "edible"); //"apple_juice" is the name for resources
     public static final Item APPLE_PIE = new FoodBase("apple_pie", 8, 0.8F, false, "edible");
     public static final Item BERRY_JUICE = new FoodBase("berry_juice", 3, 0.2F, false, "edible");
@@ -47,8 +47,6 @@ public class ItemInit {
 
     //Utility
     public static final Item GRINDER = new ItemBase("grinder", "grinder");
-    public static final Item OBSIDIAN_SHARD = new ItemBase("obsidian_shard", "none");
-    public static final Item OBSIDIAN_SOUL_GEM_EMPTY = new ItemBase("obsidian_soul_gem_empty", "none");
 
     //Foci
     public static final Item FOCUS_EMPTY = new ItemBase("focus_empty", "none");
@@ -90,7 +88,8 @@ public class ItemInit {
     public static final Item FOCUS_ZOMBIE = new ItemBase("focus_zombie", "none");
     public static final Item FOCUS_ZOMBIE_PIGMAN = new ItemBase("focus_zombie_pigman", "none");
 
-    //Filled Soul Gem
+    //Soul Gems
+    public static final Item OBSIDIAN_SOUL_GEM_EMPTY = new ItemBase("obsidian_soul_gem_empty", "none");
     public static final Item SOUL_GEM_BAT = new ItemBase("soul_gem_bat", "none");
     public static final Item SOUL_GEM_BLAZE = new ItemBase("soul_gem_blaze", "none");
     public static final Item SOUL_GEM_CAVE_SPIDER = new ItemBase("soul_gem_cave_spider", "none");
@@ -139,6 +138,18 @@ public class ItemInit {
     public static final Item LEAD_INGOT = new ItemBase("lead_ingot", "none");
     public static final Item CONSECRATED_IRON_INGOT = new ItemBase("consecrated_iron_ingot", "shiny");
     public static final Item PHOENIX_GLASS = new ItemBase("phoenix_glass", "none");
+    public static final Item OBSIDIAN_SHARD = new ItemBase("obsidian_shard", "none");
+
+    //Nuggets
+    public static final Item SILVER_NUGGET = new ItemBase("silver_nugget", "none");
+    public static final Item BRASS_NUGGET = new ItemBase("brass_nugget", "none");
+    public static final Item COPPER_NUGGET = new ItemBase("copper_nugget", "none");
+    public static final Item ZINC_NUGGET = new ItemBase("zinc_nugget", "none");
+    public static final Item TIN_NUGGET = new ItemBase("tin_nugget", "none");
+    public static final Item BRONZE_NUGGET = new ItemBase("bronze_nugget", "none");
+    public static final Item LEAD_NUGGET = new ItemBase("lead_nugget", "none");
+    public static final Item ENDER_NUGGET = new ItemBase("ender_nugget", "none");
+    public static final Item CONSECRATED_IRON_NUGGET = new ItemBase("consecrated_iron_nugget", "shiny");
 
     //Dust
     public static final Item SILVER_DUST = new ItemBase("silver_dust", "none");
@@ -150,17 +161,17 @@ public class ItemInit {
     public static final Item CONSECRATED_IRON_DUST = new ItemBase("consecrated_iron_dust", "none");
     public static final Item GOLD_DUST = new ItemBase("gold_dust", "none");
     public static final Item SALT = new ItemBase("salt", "none");
-    //public static final Item PHOENIX_ASH = new ItemBase("phoenix_ash", "none");
     public static final Item SULFUR = new ItemBase("sulfur", "none");
+    //public static final Item PHOENIX_ASH = new ItemBase("phoenix_ash", "none");
 
     //Plants
-    //public static final Item ROSEMARY = new ItemBase("rosemary", "none");
-    //public static final Item SAGE = new ItemBase("sage", "none");
-    //public static final Item ANCIENT_SPICES = new ItemBase("ancient_spices", "none");
     public static final Item LUCKY_CLOVER = new ItemBase("lucky_clover", "none");
     public static final Item ROSEMARY_SEEDS = new ItemBase("rosemary_seeds", "seeds");
     public static final Item SAGE_SEEDS = new ItemBase("sage_seeds", "seeds");
     public static final Item ANCIENT_SPICE_SEEDS = new ItemBase("ancient_spice_seeds", "seeds");
+    //public static final Item ROSEMARY = new ItemBase("rosemary", "none");
+    //public static final Item SAGE = new ItemBase("sage", "none");
+    //public static final Item ANCIENT_SPICES = new ItemBase("ancient_spices", "none");
 
 
     //Misc
@@ -182,19 +193,6 @@ public class ItemInit {
     public static final Item WITHER_BONE = new ItemBase("wither_bone", "none");
     //public static final Item WEREWOLF_HIDE = new ItemBase("werewolf_hide", "none");
     public static final Item ARACHNE_CHITIN = new ItemBase("arachne_chitin", "none");
-
-
-    //Nuggets
-    public static final Item SILVER_NUGGET = new ItemBase("silver_nugget", "none");
-    public static final Item BRASS_NUGGET = new ItemBase("brass_nugget", "none");
-    public static final Item COPPER_NUGGET = new ItemBase("copper_nugget", "none");
-    public static final Item ZINC_NUGGET = new ItemBase("zinc_nugget", "none");
-    public static final Item TIN_NUGGET = new ItemBase("tin_nugget", "none");
-    public static final Item BRONZE_NUGGET = new ItemBase("bronze_nugget", "none");
-    public static final Item LEAD_NUGGET = new ItemBase("lead_nugget", "none");
-    public static final Item ENDER_NUGGET = new ItemBase("ender_nugget", "none");
-    public static final Item CONSECRATED_IRON_NUGGET = new ItemBase("consecrated_iron_nugget", "shiny");
-
 
     //Weapons
     public static final Item SILVER_DAGGER = new ToolDagger("silver_dagger", TOOL_SILVER, "none");
@@ -218,11 +216,9 @@ public class ItemInit {
     public static final Item MIRROR = new ItemBase("mirror", "weapon");
     public static final Item BLOWPIPE = new ItemBase("blowpipe", "weapon");
 
-
     //Books
     public static final Item HUNTERS_JOURNAL = new ItemBase("hunters_journal", "none");
     //public static final Item MONSTER_NOTES = new ItemBase("monster_notes", "none");
-
 
     //Vials
     public static final Item LAMBS_BLOOD_VIAL = new ItemBase("lambs_blood_vial", "none");
@@ -235,7 +231,6 @@ public class ItemInit {
     public static final Item PHOENIX_TEAR_VIAL = new ItemBase("phoenix_tear_vial", "projectile");
     public static final Item MANTICORE_VENOM_VIAL = new ItemBase("manticore_venom_vial", "projectile");
     public static final Item KRAKEN_INK_VIAL = new ItemBase("kraken_ink_vial", "projectile");
-
 
     //Essence - Minecraft Hostile
     public static final Item ZOMBIE_ESSENCE = new ItemBase("zombie_essence", "none");
@@ -264,7 +259,6 @@ public class ItemInit {
     public static final Item VEX_ESSENCE = new ItemBase("vex_essence", "none");
     //public static final Item DROWNED_ESSENCE = new ItemBase("drowned_essence", "none");
     //public static final Item HUSK_ESSENCE = new ItemBase("husk_essence", "none");
-
 
     //Essence - Minecraft Passive
     public static final Item COW_ESSENCE = new ItemBase("cow_essence", "none");

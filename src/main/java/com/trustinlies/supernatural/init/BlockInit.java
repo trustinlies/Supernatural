@@ -10,10 +10,10 @@ import net.minecraft.block.material.Material;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class BlockInit {
 
-    public static final List<Block> BLOCKS = new ArrayList<Block>();
-    //public static final List<Block> TEBLOCKS = new ArrayList<Block>();
+    public static final List<Block> BLOCKS = new ArrayList<>();
 
     //SpecialBlockBase (String name, Material material, float hardness, float resistance, float lightlevel, int opacity, float slippery, String toolClass, int level, SoundType sound)
 
@@ -24,7 +24,7 @@ public class BlockInit {
     public static final Block SLATE_SMOOTH = new BlockBase("slate_smooth", Material.ROCK);
     public static final Block QUARTZITE = new BlockBase("quartzite", Material.ROCK);
     public static final Block QUARTZITE_SMOOTH = new BlockBase("quartzite_smooth", Material.ROCK);
-    //public static final Block ECTOPLASM_BLOCK = new SpecialBlockBase("ectoplasm_block", Material.GROUND, 1.0F, 10.0F, 15.0F, 0, "pickaxe", 0, SoundType.SLIME);
+    public static final Block ECTOPLASM_BLOCK = new SpecialBlockBase("ectoplasm_block", Material.GROUND, 1.0F, 10.0F, 1.0F, 0, "pickaxe", 0, SoundType.SLIME);
 
     //Ores
     public static final Block ORE_SILVER = new SpecialBlockBase("silver_ore", Material.ROCK, 4.0F, 25.0F, 0.0F, 15, "pickaxe", 2, SoundType.STONE);

@@ -110,11 +110,11 @@ public class EventHandler {
         Block block = event.getPlacedBlock().getBlock();
 
         if(block == Blocks.SAPLING){
-            System.out.println("Sapling placed " + block.getDefaultState().getBlock());
+            //System.out.println("Sapling placed " + block.getDefaultState().getBlock());
             growBlocks.add(position);
         }
         else{
-            System.out.println("Block placed " + block.getDefaultState().getBlock());
+            //System.out.println("Block placed " + block.getDefaultState().getBlock());
             placedBlocks.add(position);
         }
     }
