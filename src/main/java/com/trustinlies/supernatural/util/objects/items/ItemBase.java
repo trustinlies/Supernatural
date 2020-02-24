@@ -13,7 +13,9 @@ import java.util.List;
 
 public class ItemBase extends Item implements IHasModel {
 
-    public static final List<Item> SHINY = new ArrayList<Item>();
+    private static final List<Item> SHINY = new ArrayList<Item>();
+    private static final List<Item> WEAPONS = new ArrayList<>();
+
 
     public ItemBase(String name, String keyword) {
 
@@ -37,6 +39,8 @@ public class ItemBase extends Item implements IHasModel {
         }
         else if(keyword.contains("shiny")||name.contains("_essence")|| (name.contains("focus") && !name.equals("focus_empty")) || (name.contains("soul_gem") && !name.contains("empty")) ){
             SHINY.add(this);
+        } else if(keyword.contains("weapon")){
+            WEAPONS.add(this);
         }
 
 
@@ -58,6 +62,9 @@ public class ItemBase extends Item implements IHasModel {
         }
         else if(name.contains("_essence") || name.contains("focus_") || name.contains("soul_gem")){
             Main.proxy.registerItemRenderer(this, 0, "inventory", "essence");
+        }
+        else if (WEAPONS.contains(this)){
+            Main.proxy.registerItemRenderer(this, 0, "inventory", "weapons");
         }
         else {
             Main.proxy.registerItemRenderer(this, 0, "inventory", "items");

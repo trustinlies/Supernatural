@@ -17,10 +17,10 @@ public class CreativeTabsSupernatural extends CreativeTabs {
     @Override
     public ItemStack getTabIconItem() {
         if (tab == 1) {
-            return new ItemStack(ItemInit.APPLE_JUICE);
+            return new ItemStack((BlockInit.BASALT));
         }
         else if (tab == 2){
-            return new ItemStack((BlockInit.BASALT));
+            return new ItemStack(ItemInit.APPLE_JUICE);
         }
         else {
             return new ItemStack((ItemInit.CREEPER_ESSENCE));

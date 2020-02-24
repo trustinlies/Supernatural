@@ -31,8 +31,8 @@ public class Main {
 
     private static Logger logger;
 
-    public static CreativeTabs ITEMTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalItemsTab", 1);
-    public static CreativeTabs BLOCKTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalBlocksTab", 2);
+    public static CreativeTabs BLOCKTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalBlocksTab", 1);
+    public static CreativeTabs ITEMTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalItemsTab", 2);
     public static CreativeTabs ESSENCETAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalEssencesTab", 3);
 
     @Mod.EventHandler

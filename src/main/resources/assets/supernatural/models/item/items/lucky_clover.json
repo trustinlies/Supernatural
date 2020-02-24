@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "supernatural:items/lucky_clover"
+    "layer0": "supernatural:items/misc/lucky_clover"
   }
 }

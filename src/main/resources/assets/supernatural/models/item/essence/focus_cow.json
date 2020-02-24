@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "supernatural:items/focuscow"
+    "layer0": "supernatural:items/essences/focuscow"
   }
 }

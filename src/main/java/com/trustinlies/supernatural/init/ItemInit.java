@@ -35,6 +35,7 @@ public class ItemInit {
     public static final Item.ToolMaterial TOOL_SILVER = EnumHelper.addToolMaterial("tool_silver", 2, 500, 5.0F, 8.0F, 25);
     public static final Item.ToolMaterial TOOL_TIN = EnumHelper.addToolMaterial("tool_tin", 2, 128, 5.0F, 3.0F, 6);
     public static final Item.ToolMaterial TOOL_ZINC = EnumHelper.addToolMaterial("tool_zinc", 2, 190, 5.0F, 4.0F, 9);
+    public static final Item.ToolMaterial TOOL_PHOENIX = EnumHelper.addToolMaterial("tool_phoenix", 5, 1000, 7.0F, 16.0F, 50);
 
     //Foods
     //Pies give saturation effect for 30 seconds. Juice gives Movement Speed for 30 seconds.
@@ -46,13 +47,87 @@ public class ItemInit {
 
     //Utility
     public static final Item GRINDER = new ItemBase("grinder", "grinder");
-    //public static final Item OBSIDIAN_SHARD = new ItemBase("obsidian_shard", "none");
+    public static final Item OBSIDIAN_SHARD = new ItemBase("obsidian_shard", "none");
     public static final Item OBSIDIAN_SOUL_GEM_EMPTY = new ItemBase("obsidian_soul_gem_empty", "none");
-    //public static final Item OBSIDIAN_SOUL_GEM_FULL = new ItemBase("obsidian_soul_gem_full", "none");
 
     //Foci
     public static final Item FOCUS_EMPTY = new ItemBase("focus_empty", "none");
     public static final Item FOCUS_BAT = new ItemBase("focus_bat", "none");
+    public static final Item FOCUS_BLAZE = new ItemBase("focus_blaze", "none");
+    public static final Item FOCUS_CAVE_SPIDER = new ItemBase("focus_cave_spider", "none");
+    public static final Item FOCUS_CHICKEN = new ItemBase("focus_chicken", "none");
+    public static final Item FOCUS_COW = new ItemBase("focus_cow", "none");
+    public static final Item FOCUS_CREEPER = new ItemBase("focus_creeper", "none");
+    public static final Item FOCUS_ELDER_GUARDIAN = new ItemBase("focus_elder_guardian", "none");
+    public static final Item FOCUS_ENDER_DRAGON = new ItemBase("focus_ender_dragon", "none");
+    public static final Item FOCUS_ENDERMAN = new ItemBase("focus_enderman", "none");
+    public static final Item FOCUS_ENDERMITE = new ItemBase("focus_endermite", "none");
+    public static final Item FOCUS_EVOKER = new ItemBase("focus_evoker", "none");
+    public static final Item FOCUS_GHAST = new ItemBase("focus_ghast", "none");
+    public static final Item FOCUS_GUARDIAN = new ItemBase("focus_guardian", "none");
+    public static final Item FOCUS_HORSE = new ItemBase("focus_horse", "none");
+    public static final Item FOCUS_LLAMA = new ItemBase("focus_llama", "none");
+    public static final Item FOCUS_MAGMA_CUBE = new ItemBase("focus_magma_cube", "none");
+    public static final Item FOCUS_MOOSHROOM = new ItemBase("focus_mooshroom", "none");
+    public static final Item FOCUS_PIG = new ItemBase("focus_pig", "none");
+    public static final Item FOCUS_POLAR_BEAR = new ItemBase("focus_polar_bear", "none");
+    public static final Item FOCUS_RABBIT = new ItemBase("focus_rabbit", "none");
+    public static final Item FOCUS_SHEEP = new ItemBase("focus_sheep", "none");
+    public static final Item FOCUS_SHULKER = new ItemBase("focus_shulker", "none");
+    public static final Item FOCUS_SILVERFISH = new ItemBase("focus_silverfish", "none");
+    public static final Item FOCUS_SKELETON = new ItemBase("focus_skeleton", "none");
+    public static final Item FOCUS_SLIME = new ItemBase("focus_slime", "none");
+    public static final Item FOCUS_SPIDER = new ItemBase("focus_spider", "none");
+    public static final Item FOCUS_SQUID = new ItemBase("focus_squid", "none");
+    public static final Item FOCUS_STRAY = new ItemBase("focus_stray", "none");
+    public static final Item FOCUS_VEX = new ItemBase("focus_vex", "none");
+    public static final Item FOCUS_VILLAGER = new ItemBase("focus_villager", "none");
+    public static final Item FOCUS_VINDICATOR = new ItemBase("focus_vindicator", "none");
+    public static final Item FOCUS_WITCH = new ItemBase("focus_witch", "none");
+    public static final Item FOCUS_WITHER = new ItemBase("focus_wither", "none");
+    public static final Item FOCUS_WITHER_SKELETON = new ItemBase("focus_wither_skeleton", "none");
+    public static final Item FOCUS_WOLF = new ItemBase("focus_wolf", "none");
+    public static final Item FOCUS_ZOMBIE = new ItemBase("focus_zombie", "none");
+    public static final Item FOCUS_ZOMBIE_PIGMAN = new ItemBase("focus_zombie_pigman", "none");
+
+    //Filled Soul Gem
+    public static final Item SOUL_GEM_BAT = new ItemBase("soul_gem_bat", "none");
+    public static final Item SOUL_GEM_BLAZE = new ItemBase("soul_gem_blaze", "none");
+    public static final Item SOUL_GEM_CAVE_SPIDER = new ItemBase("soul_gem_cave_spider", "none");
+    public static final Item SOUL_GEM_CHICKEN = new ItemBase("soul_gem_chicken", "none");
+    public static final Item SOUL_GEM_COW = new ItemBase("soul_gem_cow", "none");
+    public static final Item SOUL_GEM_CREEPER = new ItemBase("soul_gem_creeper", "none");
+    public static final Item SOUL_GEM_ELDER_GUARDIAN = new ItemBase("soul_gem_elder_guardian", "none");
+    public static final Item SOUL_GEM_ENDER_DRAGON = new ItemBase("soul_gem_ender_dragon", "none");
+    public static final Item SOUL_GEM_ENDERMAN = new ItemBase("soul_gem_enderman", "none");
+    public static final Item SOUL_GEM_ENDERMITE = new ItemBase("soul_gem_endermite", "none");
+    public static final Item SOUL_GEM_EVOKER = new ItemBase("soul_gem_evoker", "none");
+    public static final Item SOUL_GEM_GHAST = new ItemBase("soul_gem_ghast", "none");
+    public static final Item SOUL_GEM_GUARDIAN = new ItemBase("soul_gem_guardian", "none");
+    public static final Item SOUL_GEM_HORSE = new ItemBase("soul_gem_horse", "none");
+    public static final Item SOUL_GEM_LLAMA = new ItemBase("soul_gem_llama", "none");
+    public static final Item SOUL_GEM_MAGMA_CUBE = new ItemBase("soul_gem_magma_cube", "none");
+    public static final Item SOUL_GEM_MOOSHROOM = new ItemBase("soul_gem_mooshroom", "none");
+    public static final Item SOUL_GEM_PIG = new ItemBase("soul_gem_pig", "none");
+    public static final Item SOUL_GEM_POLAR_BEAR = new ItemBase("soul_gem_polar_bear", "none");
+    public static final Item SOUL_GEM_RABBIT = new ItemBase("soul_gem_rabbit", "none");
+    public static final Item SOUL_GEM_SHEEP = new ItemBase("soul_gem_sheep", "none");
+    public static final Item SOUL_GEM_SHULKER = new ItemBase("soul_gem_shulker", "none");
+    public static final Item SOUL_GEM_SILVERFISH = new ItemBase("soul_gem_silverfish", "none");
+    public static final Item SOUL_GEM_SKELETON = new ItemBase("soul_gem_skeleton", "none");
+    public static final Item SOUL_GEM_SLIME = new ItemBase("soul_gem_slime", "none");
+    public static final Item SOUL_GEM_SPIDER = new ItemBase("soul_gem_spider", "none");
+    public static final Item SOUL_GEM_SQUID = new ItemBase("soul_gem_squid", "none");
+    public static final Item SOUL_GEM_STRAY = new ItemBase("soul_gem_stray", "none");
+    public static final Item SOUL_GEM_VEX = new ItemBase("soul_gem_vex", "none");
+    public static final Item SOUL_GEM_VILLAGER = new ItemBase("soul_gem_villager", "none");
+    public static final Item SOUL_GEM_VINDICATOR = new ItemBase("soul_gem_vindicator", "none");
+    public static final Item SOUL_GEM_WITCH = new ItemBase("soul_gem_witch", "none");
+    public static final Item SOUL_GEM_WITHER = new ItemBase("soul_gem_wither", "none");
+    public static final Item SOUL_GEM_WITHER_SKELETON = new ItemBase("soul_gem_wither_skeleton", "none");
+    public static final Item SOUL_GEM_WOLF = new ItemBase("soul_gem_wolf", "none");
+    public static final Item SOUL_GEM_ZOMBIE = new ItemBase("soul_gem_zombie", "none");
+    public static final Item SOUL_GEM_ZOMBIE_PIGMAN = new ItemBase("soul_gem_zombie_pigman", "none");
 
     //Ingots
     public static final Item SILVER_INGOT = new ItemBase("silver_ingot", "none");
@@ -63,10 +138,10 @@ public class ItemInit {
     public static final Item BRONZE_INGOT = new ItemBase("bronze_ingot", "none");
     public static final Item LEAD_INGOT = new ItemBase("lead_ingot", "none");
     public static final Item CONSECRATED_IRON_INGOT = new ItemBase("consecrated_iron_ingot", "shiny");
-    //public static final Item PHOENIX_GLASS = new ItemBase("phoenix_glass", "none");
+    public static final Item PHOENIX_GLASS = new ItemBase("phoenix_glass", "none");
 
     //Dust
-    /*public static final Item SILVER_DUST = new ItemBase("silver_dust", "none");
+    public static final Item SILVER_DUST = new ItemBase("silver_dust", "none");
     public static final Item BRASS_DUST = new ItemBase("brass_dust", "none");
     public static final Item COPPER_DUST = new ItemBase("copper_dust", "none");
     public static final Item ZINC_DUST = new ItemBase("zinc_dust", "none");
@@ -75,17 +150,17 @@ public class ItemInit {
     public static final Item CONSECRATED_IRON_DUST = new ItemBase("consecrated_iron_dust", "none");
     public static final Item GOLD_DUST = new ItemBase("gold_dust", "none");
     public static final Item SALT = new ItemBase("salt", "none");
-    public static final Item PHOENIX_ASH = new ItemBase("phoenix_ash", "none");
+    //public static final Item PHOENIX_ASH = new ItemBase("phoenix_ash", "none");
     public static final Item SULFUR = new ItemBase("sulfur", "none");
 
     //Plants
-    public static final Item ROSEMARY = new ItemBase("rosemary", "none");
-    public static final Item SAGE = new ItemBase("sage", "none");
-    public static final Item ANCIENT_SPICES = new ItemBase("ancient_spices", "none");
+    //public static final Item ROSEMARY = new ItemBase("rosemary", "none");
+    //public static final Item SAGE = new ItemBase("sage", "none");
+    //public static final Item ANCIENT_SPICES = new ItemBase("ancient_spices", "none");
     public static final Item LUCKY_CLOVER = new ItemBase("lucky_clover", "none");
-    public static final Item ROSEMARY_SEEDS = new ItemBase("rosemary_seeds", "none");
-    public static final Item SAGE_SEEDS = new ItemBase("sage_seeds", "none");
-    public static final Item ANCIENT_SPICE_SEEDS = new ItemBase("ancient_spice_seeds", "none");
+    public static final Item ROSEMARY_SEEDS = new ItemBase("rosemary_seeds", "seeds");
+    public static final Item SAGE_SEEDS = new ItemBase("sage_seeds", "seeds");
+    public static final Item ANCIENT_SPICE_SEEDS = new ItemBase("ancient_spice_seeds", "seeds");
 
 
     //Misc
@@ -99,14 +174,15 @@ public class ItemInit {
     public static final Item YETI_FUR = new ItemBase("yeti_fur", "none");
     public static final Item STYMPHALIAN_FEATHER = new ItemBase("stymphalian_feather", "none");
     public static final Item PHOENIX_FEATHER = new ItemBase("phoenix_feather", "none");
-    public static final Item MANTICORE_LEATHER = new ItemBase("manticore_leather", "none");
+    //public static final Item MANTICORE_LEATHER = new ItemBase("manticore_leather", "none");
     public static final Item MANTICORE_STINGER = new ItemBase("manticore_stinger", "none");
-    public static final Item CHIMERA_HIDE = new ItemBase("chimera_hide", "none");
+    //public static final Item CHIMERA_HIDE = new ItemBase("chimera_hide", "none");
     public static final Item CHIMERA_FLAME_GLAND = new ItemBase("chimera_flame_gland", "none");
+    public static final Item ACTIVE_CHIMERA_FLAME_GLAND = new ItemBase("active_chimera_flame_gland", "none");
     public static final Item WITHER_BONE = new ItemBase("wither_bone", "none");
-    public static final Item WEREWOLF_HIDE = new ItemBase("werewolf_hide", "none");
+    //public static final Item WEREWOLF_HIDE = new ItemBase("werewolf_hide", "none");
     public static final Item ARACHNE_CHITIN = new ItemBase("arachne_chitin", "none");
-    */
+
 
     //Nuggets
     public static final Item SILVER_NUGGET = new ItemBase("silver_nugget", "none");
@@ -118,36 +194,36 @@ public class ItemInit {
     public static final Item LEAD_NUGGET = new ItemBase("lead_nugget", "none");
     public static final Item ENDER_NUGGET = new ItemBase("ender_nugget", "none");
     public static final Item CONSECRATED_IRON_NUGGET = new ItemBase("consecrated_iron_nugget", "shiny");
-    /*
+
 
     //Weapons
-    public static final Item SILVER_DAGGER = new ItemBase("silver_dagger", "none");
-    public static final Item GOLD_DAGGER = new ItemBase("gold_dagger", "none");
-    public static final Item STONE_DAGGER = new ItemBase("stone_dagger", "none");
-    public static final Item IRON_DAGGER = new ItemBase("iron_dagger", "none");
-    public static final Item CONSECRATED_IRON_DAGGER = new ItemBase("consecrated_iron_dagger", "none");
-    public static final Item WOOD_DAGGER = new ItemBase("wood_dagger", "none");
-    public static final Item BAMBOO_DAGGER = new ItemBase("bamboo_dagger", "none");
-    public static final Item BRASS_DAGGER = new ItemBase("brass_dagger", "none");
-    public static final Item COPPER_DAGGER = new ItemBase("copper_dagger", "none");
-    public static final Item LEAD_DAGGER = new ItemBase("lead_dagger", "none");
-    public static final Item MANTICORE_STINGER_DAGGER = new ItemBase("manticore_stinger_dagger", "none");
-    public static final Item PHOENIX_GLASS_DAGGER = new ItemBase("phoenix_glass_dagger", "none");
-    public static final Item SILVER_KATANA = new ItemBase("silver_katana", "none");
-    public static final Item IRON_KATANA = new ItemBase("iron_katana", "none");
-    public static final Item CONSECRATED_IRON_KATANA = new ItemBase("consecrated_iron_katana", "none");
-    public static final Item PHOENIX_GLASS_KATANA = new ItemBase("phoenix_glass_katana", "none");
-    public static final Item WHIP = new ItemBase("whip", "none");
-    public static final Item ASWANG_WHIP = new ItemBase("aswang_whip", "none");
-    public static final Item MIRROR = new ItemBase("mirror", "none");
-    public static final Item BLOWPIPE = new ItemBase("blowpipe", "none");
+    public static final Item SILVER_DAGGER = new ToolDagger("silver_dagger", TOOL_SILVER, "none");
+    public static final Item GOLD_DAGGER = new ToolDagger("gold_dagger", Item.ToolMaterial.GOLD, "none");
+    public static final Item STONE_DAGGER = new ToolDagger("stone_dagger", Item.ToolMaterial.STONE, "none");
+    public static final Item IRON_DAGGER = new ToolDagger("iron_dagger", Item.ToolMaterial.IRON, "none");
+    public static final Item CONSECRATED_IRON_DAGGER = new ToolDagger("consecrated_iron_dagger", TOOL_CIRON, "shiny");
+    public static final Item WOOD_DAGGER = new ToolDagger("wood_dagger", Item.ToolMaterial.WOOD,"none");
+    public static final Item BAMBOO_DAGGER = new ToolDagger("bamboo_dagger", Item.ToolMaterial.WOOD,"none");
+    public static final Item BRASS_DAGGER = new ToolDagger("brass_dagger", TOOL_BRASS,"none");
+    public static final Item COPPER_DAGGER = new ToolDagger("copper_dagger", TOOL_COPPER,"none");
+    public static final Item LEAD_DAGGER = new ToolDagger("lead_dagger", TOOL_LEAD,"none");
+    public static final Item MANTICORE_STINGER_DAGGER = new ToolDagger("manticore_stinger_dagger", TOOL_SILVER,"none");
+    public static final Item PHOENIX_GLASS_DAGGER = new ToolDagger("phoenix_glass_dagger", TOOL_PHOENIX,"none");
+    public static final Item SILVER_KATANA = new ToolKatana("silver_katana", TOOL_SILVER,"none");
+    public static final Item IRON_KATANA = new ToolKatana("iron_katana", Item.ToolMaterial.IRON,"none");
+    public static final Item CONSECRATED_IRON_KATANA = new ToolKatana("consecrated_iron_katana", TOOL_CIRON,"shiny");
+    public static final Item PHOENIX_GLASS_KATANA = new ToolKatana("phoenix_glass_katana", TOOL_PHOENIX,"none");
+    public static final Item WHIP = new ItemBase("whip", "weapon");
+    public static final Item ASWANG_WHIP = new ItemBase("aswang_whip", "weapon");
+    public static final Item MIRROR = new ItemBase("mirror", "weapon");
+    public static final Item BLOWPIPE = new ItemBase("blowpipe", "weapon");
 
 
     //Books
     public static final Item HUNTERS_JOURNAL = new ItemBase("hunters_journal", "none");
-    public static final Item MONSTER_NOTES = new ItemBase("monster_notes", "none");
+    //public static final Item MONSTER_NOTES = new ItemBase("monster_notes", "none");
 
-*/
+
     //Vials
     public static final Item LAMBS_BLOOD_VIAL = new ItemBase("lambs_blood_vial", "none");
     public static final Item FRESH_WATER_VIAL = new ItemBase("fresh_water_vial", "none");
@@ -184,6 +260,8 @@ public class ItemInit {
     public static final Item WITHER_SKELETON_ESSENCE = new ItemBase("wither_skeleton_essence", "none");
     public static final Item WITHER_ESSENCE = new ItemBase("wither_essence", "none");
     public static final Item ENDER_DRAGON_ESSENCE = new ItemBase("ender_dragon_essence", "none");
+    public static final Item VINDICATOR_ESSENCE = new ItemBase("vindicator_essence", "none");
+    public static final Item VEX_ESSENCE = new ItemBase("vex_essence", "none");
     //public static final Item DROWNED_ESSENCE = new ItemBase("drowned_essence", "none");
     //public static final Item HUSK_ESSENCE = new ItemBase("husk_essence", "none");
 
@@ -200,6 +278,8 @@ public class ItemInit {
     public static final Item POLAR_BEAR_ESSENCE = new ItemBase("polar_bear_essence", "none");
     public static final Item SQUID_ESSENCE = new ItemBase("squid_essence", "none");
     public static final Item VILLAGER_ESSENCE = new ItemBase("villager_essence", "none");
+    public static final Item LLAMA_ESSENCE = new ItemBase("llama_essence", "none");
+    public static final Item WOLF_ESSENCE = new ItemBase("wolf_essence", "none");
     //public static final Item IRON_GOLEM_ESSENCE = new ItemBase("iron_golem_essence", "none");
     //public static final Item SNOW_GOLEM_ESSENCE = new ItemBase("snow_golem_essence", "none");
 

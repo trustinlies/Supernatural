@@ -3,6 +3,9 @@ package com.trustinlies.supernatural.proxy;
 import com.trustinlies.supernatural.util.capabilities.farmer.Farmer;
 import com.trustinlies.supernatural.util.capabilities.farmer.FarmerStorage;
 import com.trustinlies.supernatural.util.capabilities.farmer.IFarmer;
+import com.trustinlies.supernatural.util.capabilities.fisher.Fisher;
+import com.trustinlies.supernatural.util.capabilities.fisher.FisherStorage;
+import com.trustinlies.supernatural.util.capabilities.fisher.IFisher;
 import com.trustinlies.supernatural.util.capabilities.lumberjack.ILumberjack;
 import com.trustinlies.supernatural.util.capabilities.lumberjack.Lumberjack;
 import com.trustinlies.supernatural.util.capabilities.lumberjack.LumberjackStorage;
@@ -22,10 +25,14 @@ public class CommonProxy {
     }
 
     public void init(){
+
+        //Register Gathering Skills
         CapabilityManager.INSTANCE.register(IMining.class, new MiningStorage(), Mining::new);
         CapabilityManager.INSTANCE.register(ILumberjack.class, new LumberjackStorage(), Lumberjack::new);
         CapabilityManager.INSTANCE.register(IFarmer.class, new FarmerStorage(), Farmer::new);
+        CapabilityManager.INSTANCE.register(IFisher.class, new FisherStorage(), Fisher::new);
 
+        //Register Capability Handler
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
     }
 

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "supernatural:items/zinc_dust"
+    "layer0": "supernatural:items/ingotsdustnuggets/zinc_dust"
   }
 }

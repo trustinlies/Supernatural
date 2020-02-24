@@ -22,6 +22,7 @@ public class ToolSword extends ItemSword implements IHasModel {
         setRegistryName(name);
         setCreativeTab(Main.ITEMTAB);
 
+
         ItemInit.ITEMS.add(this);
 
         if(keyword.contains("shiny")){

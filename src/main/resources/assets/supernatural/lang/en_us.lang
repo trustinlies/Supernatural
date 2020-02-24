@@ -8,7 +8,7 @@ item.bad_boy.name=Bad Boy
 #Misc Items
 item.blank_slate_tablet.name=Blank Slate Tablet
 item.blank_basalt_tablet.name=Blank Basalt Tablet
-item.smoldering_coals.name=Smoldering Coals
+item.smoldering_coal.name=Smoldering Coals
 item.lucky_clover.name=Lucky Clover
 item.guano.name=Guano
 item.ectoplasm.name=Ectoplasm
@@ -23,10 +23,12 @@ item.manticore_leather.name=Manticore Leather
 item.manticore_stinger.name=Manticore Stinger
 item.chimera_hide.name=Chimera Hide
 item.chimera_flame_gland.name=Chimera Flame Gland
+item.active_chimera_flame_gland.name=Active Chimera Flame Gland
 item.wither_bone.name=Withered Bone
 item.bat_wing.name=Bat Wing
 item.werewolf_hide.name=Werewolf Hide
 item.arachne_chitin.name=Arachne Chitin
+item.obsidian_shard.name=Obsidian Shard
 
 #Ingots
 item.silver_ingot.name=Silver Ingot
@@ -131,6 +133,86 @@ item.snow_golem_essence.name=Essence of Snow Golem
 
 #Mod Essences
 
+#Foci
+item.focus_empty.name=Empty Focus
+item.focus_bat.name=Bat Focus
+item.focus_blaze.name=Blaze Focus
+item.focus_cave_spider.name=Cave Spider Focus
+item.focus_chicken.name=Chicken Focus
+item.focus_cow.name=Cow Focus
+item.focus_creeper.name=Creeper Focus
+item.focus_elder_guardian.name=Elder Guardian Focus
+item.focus_ender_dragon.name=Ender Dragon Focus
+item.focus_enderman.name=Enderman Focus
+item.focus_endermite.name=Endermite Focus
+item.focus_evoker.name=Evoker Focus
+item.focus_ghast.name=Ghast Focus
+item.focus_guardian.name=Guardian Focus
+item.focus_horse.name=Horse Focus
+item.focus_llama.name=Llama Focus
+item.focus_magma_cube.name=Magma Cube Focus
+item.focus_mooshroom.name=Mooshroom Focus
+item.focus_pig.name=Pig Focus
+item.focus_polar_bear.name=Polar Bear Focus
+item.focus_rabbit.name=Rabbit Focus
+item.focus_sheep.name=Sheep Focus
+item.focus_shulker.name=Shulker Focus
+item.focus_silverfish.name=Silverfish Focus
+item.focus_skeleton.name=Skeleton Focus
+item.focus_slime.name=Slime Focus
+item.focus_spider.name=Spider Focus
+item.focus_squid.name=Squid Focus
+item.focus_stray.name=Stray Focus
+item.focus_vex.name=Vex Focus
+item.focus_villager.name=Villager Focus
+item.focus_vindicator.name=Vindicator Focus
+item.focus_witch.name=Witch Focus
+item.focus_wither.name=Wither Focus
+item.focus_wither_skeleton.name=Wither Skeleton Focus
+item.focus_wolf.name=Wolf Focus
+item.focus_zombie.name=Zombie Focus
+item.focus_zombie_pigman.name=Zombie Pigman Focus
+
+#Soul Gems
+item.obsidian_soul_gem_empty.name=Empty Soul Gem
+item.soul_gem_bat.name=Bat Soul Gem 
+item.soul_gem_blaze.name=Blaze Soul Gem
+item.soul_gem_cave_spider.name=Cave Spider Soul Gem
+item.soul_gem_chicken.name=Chicken Soul Gem
+item.soul_gem_cow.name=Cow Soul Gem
+item.soul_gem_creeper.name=Creeper Soul Gem
+item.soul_gem_elder_guardian.name=Elder Guardian Soul Gem
+item.soul_gem_ender_dragon.name=Ender Dragon Soul Gem
+item.soul_gem_enderman.name=Enderman Soul Gem
+item.soul_gem_endermite.name=Endermite Soul Gem
+item.soul_gem_evoker.name=Evoker Soul Gem
+item.soul_gem_ghast.name=Ghast Soul Gem
+item.soul_gem_guardian.name=Guardian Soul Gem
+item.soul_gem_horse.name=Horse Soul Gem
+item.soul_gem_llama.name=Llama Soul Gem
+item.soul_gem_magma_cube.name=Magma Cube Soul Gem
+item.soul_gem_mooshroom.name=Mooshroom Soul Gem
+item.soul_gem_pig.name=Pig Soul Gem
+item.soul_gem_polar_bear.name=Polar Bear Soul Gem
+item.soul_gem_rabbit.name=Rabbit Soul Gem
+item.soul_gem_sheep.name=Sheep Soul Gem
+item.soul_gem_shulker.name=Shulker Soul Gem
+item.soul_gem_silverfish.name=Silverfish Soul Gem
+item.soul_gem_skeleton.name=Skeleton Soul Gem
+item.soul_gem_slime.name=Slime Soul Gem
+item.soul_gem_spider.name=Spider Soul Gem
+item.soul_gem_squid.name=Squid Soul Gem
+item.soul_gem_stray.name=Stray Soul Gem
+item.soul_gem_vex.name=Vex Soul Gem
+item.soul_gem_villager.name=Villager Soul Gem
+item.soul_gem_vindicator.name=Vindicator Soul Gem
+item.soul_gem_witch.name=Witch Soul Gem
+item.soul_gem_wither.name=Wither Soul Gem
+item.soul_gem_wither_skeleton.name=Wither Skeleton Soul Gem
+item.soul_gem_wolf.name=Wolf Soul Gem
+item.soul_gem_zombie.name=Zombie Soul Gem
+item.soul_gem_zombie_pigman.name=Zombie Pigman Soul Gem
+
 #Weapons
 item.silver_dagger.name=Silver Dagger
 item.gold_dagger.name=Gold Dagger
@@ -194,6 +276,7 @@ tile.slate_smooth.name=Smooth Slate
 tile.quartzite.name=Quartzite
 tile.quartzite_smooth.name=Smooth Quartzite
 
+
 #tools
 item.brass_pickaxe.name=Brass Pickaxe
 item.brass_axe.name=Brass Axe
@@ -235,6 +318,7 @@ item.silver_axe.name=Silver Axe
 item.silver_hoe.name=Silver Hoe
 item.silver_shovel.name=Silver Shovel
 item.silver_sword.name=Silver Sword
+item.wood_dagger.name=Wooden Dagger
 
 #Ores
 tile.silver_ore.name=Silver Ore
@@ -245,11 +329,11 @@ tile.zinc_ore.name=Zinc Ore
 tile.cinnabar_ore.name=Cinnabar Ore
 
 #Machines
-tile.essence_well.name=Essence Well
+tile.essence_well_off.name=Essence Well
+tile.essence_well_on.name=Essence Well
 container.essence_well.name=Essence Well
 
 #Tabs
 itemGroup.SupernaturalItemsTab=Supernatural Items
 itemGroup.SupernaturalBlocksTab=Supernatural Blocks
 itemGroup.SupernaturalEssencesTab=Supernatural Essences
-container.essence_well=Essence Well
