@@ -1,5 +1,7 @@
 package com.trustinlies.supernatural.util.handlers;
 
+import com.trustinlies.supernatural.util.capabilities.farmer.FarmerProvider;
+import com.trustinlies.supernatural.util.capabilities.farmer.IFarmer;
 import com.trustinlies.supernatural.util.capabilities.lumberjack.ILumberjack;
 import com.trustinlies.supernatural.util.capabilities.lumberjack.LumberjackProvider;
 import com.trustinlies.supernatural.util.capabilities.miner.IMining;
@@ -39,10 +41,12 @@ public class EventHandler {
         //Skill Variables (that contribute to block break)
         IMining mining = player.getCapability(MiningProvider.MINING_LEVEL, null);
         ILumberjack lumberjack = player.getCapability(LumberjackProvider.LUMBERJACK_LEVEL, null);
+        IFarmer farmer = player.getCapability(FarmerProvider.FARMER_LEVEL, null);
 
         //Get current levels for comparison
         int currentMining = mining.getLevel();
         int currentLumberjack = lumberjack.getLevel();
+        int currentFarmer = farmer.getLevel();
 
 
 
@@ -53,7 +57,7 @@ public class EventHandler {
 
             if (block == Blocks.LOG || block == Blocks.LOG2) {
                     lumberjack.add(2);
-                    player.sendMessage(new TextComponentString("Gained 2 Lumberjack Experience from tree"));
+                    //player.sendMessage(new TextComponentString("Gained 2 Lumberjack Experience from tree"));
                     growBlocks.remove(position);
             }
         }
@@ -63,13 +67,13 @@ public class EventHandler {
 
                 if (placedBlocks.contains(position) && growBlocks.contains(position)) {
                     lumberjack.add(2);
-                    player.sendMessage(new TextComponentString("Gained 2 Lumberjack Experience from grown tree"));
+                    //player.sendMessage(new TextComponentString("Gained 2 Lumberjack Experience from grown tree"));
                     growBlocks.remove(position);
-                } else {
+                } /*else {
                     player.sendMessage(new TextComponentString(TextFormatting.RED + "This Block was placed by a player"));
-                }
+                }*/
             }
-            else player.sendMessage(new TextComponentString(TextFormatting.RED + "This Block was placed by a player"));
+            //else player.sendMessage(new TextComponentString(TextFormatting.RED + "This Block was placed by a player"));
         }
 
         placedBlocks.remove(position);
@@ -88,7 +92,8 @@ public class EventHandler {
 
         }
 
-
+        //String m3 = String.format("%d.", farmer.getLevel());
+        //player.sendMessage(new TextComponentString(TextFormatting.GREEN + player.getDisplayNameString() + TextFormatting.RESET + " your Farmer level is " + TextFormatting.AQUA + m3));
 
     }
 
