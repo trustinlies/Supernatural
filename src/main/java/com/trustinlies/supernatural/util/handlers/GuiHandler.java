@@ -4,6 +4,7 @@ import com.trustinlies.supernatural.util.Reference;
 import com.trustinlies.supernatural.util.objects.blocks.essencewell.ContainerEssenceWell;
 import com.trustinlies.supernatural.util.objects.blocks.essencewell.GuiEssenceWell;
 import com.trustinlies.supernatural.util.objects.blocks.essencewell.TileEntityEssenceWell;
+import com.trustinlies.supernatural.util.objects.guis.SkillsGUI;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntity;
@@ -27,6 +28,9 @@ public class GuiHandler implements IGuiHandler {
                 return new ContainerEssenceWell(player.inventory, (TileEntityEssenceWell)world.getTileEntity(new BlockPos(x,y,z)));
             }
         }
+        if(ID == Reference.GUI_PROFESSION_BOOK){
+            return new SkillsGUI(player);
+        }
         return null;
     }
 
@@ -38,6 +42,9 @@ public class GuiHandler implements IGuiHandler {
             if(ID == Reference.GUI_ESSENCE_WELL){
                 return new GuiEssenceWell(player.inventory, (TileEntityEssenceWell)world.getTileEntity(new BlockPos(x,y,z)));
             }
+        }
+        if(ID == Reference.GUI_PROFESSION_BOOK){
+            return new SkillsGUI(player);
         }
         return null;
     }

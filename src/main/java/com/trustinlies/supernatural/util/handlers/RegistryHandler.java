@@ -64,6 +64,7 @@ public class RegistryHandler {
     {
         NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 
+
     }
 
     public static void postInitRegistries()

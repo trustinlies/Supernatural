@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.farmer;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer;
 
 public class Farmer implements IFarmer {
 

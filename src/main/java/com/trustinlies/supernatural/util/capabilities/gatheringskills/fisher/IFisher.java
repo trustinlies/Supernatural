@@ -1,6 +1,6 @@
-package com.trustinlies.supernatural.util.capabilities.farmer;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher;
 
-public interface IFarmer {
+public interface IFisher {
 
     public void add(int points);
 

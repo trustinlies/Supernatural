@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.farmer;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;

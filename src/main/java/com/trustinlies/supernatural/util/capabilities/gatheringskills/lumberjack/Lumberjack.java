@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.lumberjack;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.lumberjack;
 
 public class Lumberjack implements ILumberjack {
 

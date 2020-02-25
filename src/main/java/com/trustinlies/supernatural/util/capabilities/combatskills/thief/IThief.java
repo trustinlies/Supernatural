@@ -1,6 +1,6 @@
-package com.trustinlies.supernatural.util.capabilities.miner;
+package com.trustinlies.supernatural.util.capabilities.combatskills.thief;
 
-public interface IMining {
+public interface IThief {
 
     public void add(int points);
 

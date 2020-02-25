@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.miner;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.miner;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;

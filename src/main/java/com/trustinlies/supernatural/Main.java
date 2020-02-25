@@ -6,6 +6,8 @@ import com.trustinlies.supernatural.proxy.CommonProxy;
 import com.trustinlies.supernatural.recipes.SmeltingRecipes;
 import com.trustinlies.supernatural.tabs.CreativeTabsSupernatural;
 import com.trustinlies.supernatural.util.Reference;
+import com.trustinlies.supernatural.util.commands.CommandProfessions;
+import com.trustinlies.supernatural.util.lists.Lists;
 import com.trustinlies.supernatural.util.handlers.EventHandler;
 import com.trustinlies.supernatural.util.handlers.RegistryHandler;
 import com.trustinlies.supernatural.world.gen.Ores;
@@ -30,6 +32,8 @@ public class Main {
     public static CommonProxy proxy;
 
     private static Logger logger;
+
+    private static Lists itemLists = new Lists();
 
     public static CreativeTabs BLOCKTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalBlocksTab", 1);
     public static CreativeTabs ITEMTAB = new CreativeTabsSupernatural(CreativeTabs.getNextID(), "SupernaturalItemsTab", 2);
@@ -56,11 +60,13 @@ public class Main {
     {
         // some example code
         logger.info("Basalt >> {}", BlockInit.BASALT.getRegistryName());
+        System.out.println(Colors.CYAN + "Skills Reset: " + SkillsConfig.resetLevelsOnDeath + Colors.RESET);
         System.out.println(("Init"));
         SmeltingRecipes.init();
         System.out.println("Smelting Registries Initiated");
         RegistryHandler.initRegistries();
         System.out.println("Init Registry Complete");
+        itemLists.setKnightWeapons();
         proxy.init();
 
     }
@@ -76,6 +82,8 @@ public class Main {
 
     @Mod.EventHandler
     public void serverInit(FMLServerStartingEvent event){
+
+        event.registerServerCommand(new CommandProfessions());
 
     }
     //Testing Commit 2

@@ -338,3 +338,6 @@ container.essence_well.name=Essence Well
 itemGroup.SupernaturalItemsTab=Supernatural Items
 itemGroup.SupernaturalBlocksTab=Supernatural Blocks
 itemGroup.SupernaturalEssencesTab=Supernatural Essences
+
+#Containers
+container.essence_well=Essence Well

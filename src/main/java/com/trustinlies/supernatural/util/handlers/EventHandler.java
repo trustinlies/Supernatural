@@ -1,23 +1,37 @@
 package com.trustinlies.supernatural.util.handlers;
 
-import com.trustinlies.supernatural.util.capabilities.farmer.FarmerProvider;
-import com.trustinlies.supernatural.util.capabilities.farmer.IFarmer;
-import com.trustinlies.supernatural.util.capabilities.fisher.FisherProvider;
-import com.trustinlies.supernatural.util.capabilities.fisher.IFisher;
-import com.trustinlies.supernatural.util.capabilities.lumberjack.ILumberjack;
-import com.trustinlies.supernatural.util.capabilities.lumberjack.LumberjackProvider;
-import com.trustinlies.supernatural.util.capabilities.miner.IMining;
-import com.trustinlies.supernatural.util.capabilities.miner.MiningProvider;
+import com.trustinlies.supernatural.config.SkillsConfig;
+import com.trustinlies.supernatural.util.capabilities.combatskills.archer.ArcherProvider;
+import com.trustinlies.supernatural.util.capabilities.combatskills.archer.IArcher;
+import com.trustinlies.supernatural.util.capabilities.combatskills.knight.IKnight;
+import com.trustinlies.supernatural.util.capabilities.combatskills.knight.KnightProvider;
+import com.trustinlies.supernatural.util.capabilities.combatskills.mage.IMage;
+import com.trustinlies.supernatural.util.capabilities.combatskills.mage.MageProvider;
+import com.trustinlies.supernatural.util.capabilities.combatskills.thief.IThief;
+import com.trustinlies.supernatural.util.capabilities.combatskills.thief.ThiefProvider;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.FarmerProvider;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.IFarmer;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher.FisherProvider;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher.IFisher;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.lumberjack.ILumberjack;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.lumberjack.LumberjackProvider;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.miner.IMining;
+import com.trustinlies.supernatural.util.capabilities.gatheringskills.miner.MiningProvider;
+import com.trustinlies.supernatural.util.lists.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -122,8 +136,9 @@ public class EventHandler {
     @SubscribeEvent
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event){
         //System.out.println(Colors.YELLOW + event.player.getDisplayNameString() + " has joined the game" + Colors.RESET);
-        //EntityPlayer player = event.player;
-        //IMining mining = player.getCapability(MiningProvider.MINING_LEVEL, null);
+        EntityPlayer player = event.player;
+        IArcher mining = player.getCapability(ArcherProvider.ARCHER_LEVEL, null);
+        System.out.println(mining.getLevel());
 
     }
 
@@ -156,25 +171,117 @@ public class EventHandler {
     }
 
     @SubscribeEvent
-    public void onPlayerClone(net.minecraftforge.event.entity.player.PlayerEvent.Clone event)
-    {
+    public void onPlayerClone(net.minecraftforge.event.entity.player.PlayerEvent.Clone event){
         EntityPlayer player = event.getEntityPlayer();
-        IMining mining = player.getCapability(MiningProvider.MINING_LEVEL, null);
-        IMining oldmining = event.getOriginal().getCapability(MiningProvider.MINING_LEVEL, null);
+        if(!SkillsConfig.resetLevelsOnDeath || !event.isWasDeath()) {
 
-        ILumberjack lumberjack = player.getCapability(LumberjackProvider.LUMBERJACK_LEVEL, null);
-        ILumberjack oldlumberjack = event.getOriginal().getCapability(LumberjackProvider.LUMBERJACK_LEVEL, null);
+            IMining mining = player.getCapability(MiningProvider.MINING_LEVEL, null);
+            IMining oldmining = event.getOriginal().getCapability(MiningProvider.MINING_LEVEL, null);
 
-        IFisher fisher= player.getCapability(FisherProvider.FISHER_LEVEL, null);
-        IFisher oldfisher = event.getOriginal().getCapability(FisherProvider.FISHER_LEVEL, null);
+            ILumberjack lumberjack = player.getCapability(LumberjackProvider.LUMBERJACK_LEVEL, null);
+            ILumberjack oldlumberjack = event.getOriginal().getCapability(LumberjackProvider.LUMBERJACK_LEVEL, null);
 
-        IFarmer farmer = player.getCapability(FarmerProvider.FARMER_LEVEL, null);
-        IFarmer oldfarmer = event.getOriginal().getCapability(FarmerProvider.FARMER_LEVEL, null);
+            IFisher fisher = player.getCapability(FisherProvider.FISHER_LEVEL, null);
+            IFisher oldfisher = event.getOriginal().getCapability(FisherProvider.FISHER_LEVEL, null);
 
-        mining.set(oldmining.getExp());
-        lumberjack.set(oldlumberjack.getExp());
-        fisher.set(oldfisher.getExp());
-        farmer.set(oldfarmer.getExp());
+            IFarmer farmer = player.getCapability(FarmerProvider.FARMER_LEVEL, null);
+            IFarmer oldfarmer = event.getOriginal().getCapability(FarmerProvider.FARMER_LEVEL, null);
+
+            IKnight knight = player.getCapability(KnightProvider.KNIGHT_LEVEL, null);
+            IKnight oldknight = event.getOriginal().getCapability(KnightProvider.KNIGHT_LEVEL, null);
+
+            IArcher archer = player.getCapability(ArcherProvider.ARCHER_LEVEL, null);
+            IArcher oldarcher = event.getOriginal().getCapability(ArcherProvider.ARCHER_LEVEL, null);
+
+            IMage mage = player.getCapability(MageProvider.MAGE_LEVEL, null);
+            IMage oldmage = event.getOriginal().getCapability(MageProvider.MAGE_LEVEL, null);
+
+            IThief thief = player.getCapability(ThiefProvider.THIEF_LEVEL, null);
+            IThief oldthief = event.getOriginal().getCapability(ThiefProvider.THIEF_LEVEL, null);
+
+            mining.set(oldmining.getExp());
+            lumberjack.set(oldlumberjack.getExp());
+            fisher.set(oldfisher.getExp());
+            farmer.set(oldfarmer.getExp());
+            knight.set(oldknight.getExp());
+            archer.set(oldarcher.getExp());
+            thief.set(oldthief.getExp());
+            mage.set(oldmage.getExp());
+
+        }
+        else{
+            player.sendMessage(new TextComponentString(TextFormatting.RED + "Profession Levels have been reset due to config settings."));
+        }
+    }
+
+    @SubscribeEvent
+    public void onEntityDeath(LivingDeathEvent event){
+        DamageSource source = event.getSource();
+        EntityLivingBase victim = event.getEntityLiving();
+        //Make multiplier a config option
+        int health = (int) (victim.getMaxHealth()*1.5);
+
+        if(source.getTrueSource() instanceof EntityPlayer){
+            EntityPlayer player = (EntityPlayer) source.getTrueSource();
+            ItemStack itemStack = player.getHeldItemMainhand();
+            String inHand = itemStack.getUnlocalizedName().toLowerCase();
+
+            //System.out.println("Immediate Source: "+ source.getImmediateSource());
+            //System.out.println("True Source: " + source.getTrueSource());
+            //System.out.println("Damage Type: " + source.getDamageType());
+
+            if(inHand.contains("sword")|| inHand.contains("axe")||inHand.contains("katana") || inHand.contains("hatchet")|| Lists.KNIGHT_WEAPONS.contains(itemStack)){
+                IKnight knight = player.getCapability(KnightProvider.KNIGHT_LEVEL, null);
+                int currentKnight = knight.getLevel();
+                knight.add(health);
+                //String m1 = String.format("%d.", health);
+                //player.sendMessage(new TextComponentString(TextFormatting.GOLD + "Knight Profession Exp Gained: " + m1));
+                if(currentKnight<knight.getLevel()){
+                    String m2 = String.format("%d.", knight.getLevel());
+                    player.sendMessage(new TextComponentString(TextFormatting.GREEN + player.getDisplayNameString() + TextFormatting.RESET + " your Knight level has increased to " + TextFormatting.AQUA + m2));
+                }
+            }
+            else if(source.getDamageType().equals("arrow") && !inHand.contains("wand")){
+                IArcher archer = player.getCapability(ArcherProvider.ARCHER_LEVEL, null);
+                int currentArcher = archer.getLevel();
+                int archerXP = health*2;
+                archer.add(archerXP);
+                //String m1 = String.format("%d.", archerXP);
+                //player.sendMessage(new TextComponentString(TextFormatting.GOLD + "Archer Profession Exp Gained: " + m1));
+                if(currentArcher<archer.getLevel()){
+                    String m2 = String.format("%d.", archer.getLevel());
+                    player.sendMessage(new TextComponentString(TextFormatting.GREEN + player.getDisplayNameString() + TextFormatting.RESET + " your Archer level has increased to " + TextFormatting.AQUA + m2));
+                }
+
+            }
+            else if(source.getDamageType().equals("indirectMagic")||source.getDamageType().equals("magic") || (source.getDamageType().equals("arrow") && inHand.contains("wand"))){
+                IMage mage = player.getCapability(MageProvider.MAGE_LEVEL, null);
+                int currentMage = mage.getLevel();
+                int mageXP = health*3;
+                mage.add(mageXP);
+                //String m1 = String.format("%d.", mageXP);
+                //player.sendMessage(new TextComponentString(TextFormatting.GOLD + "Mage Profession Exp Gained: " + m1));
+                if(currentMage<mage.getLevel()){
+                    String m2 = String.format("%d.", mage.getLevel());
+                    player.sendMessage(new TextComponentString(TextFormatting.GREEN + player.getDisplayNameString() + TextFormatting.RESET + " your Mage level has increased to " + TextFormatting.AQUA + m2));
+                }
+
+            }
+            else if(inHand.contains("dagger")){
+                IThief thief = player.getCapability(ThiefProvider.THIEF_LEVEL, null);
+                int currentthief = thief.getLevel();
+                thief.add(health);
+                //String m1 = String.format("%d.", health);
+                //player.sendMessage(new TextComponentString(TextFormatting.GOLD + "Thief Profession Exp Gained: " + m1));
+                if(currentthief<thief.getLevel()){
+                    String m2 = String.format("%d.", thief.getLevel());
+                    player.sendMessage(new TextComponentString(TextFormatting.GREEN + player.getDisplayNameString() + TextFormatting.RESET + " your Thief level has increased to " + TextFormatting.AQUA + m2));
+                }
+
+            }
+
+        }
+
     }
 
 }

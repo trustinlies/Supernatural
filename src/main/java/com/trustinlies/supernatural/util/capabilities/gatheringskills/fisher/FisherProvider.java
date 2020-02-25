@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.fisher;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.util.EnumFacing;

@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.fisher;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher;
 
 public class Fisher implements IFisher {
 

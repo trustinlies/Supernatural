@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.lumberjack;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.lumberjack;
 
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTPrimitive;

@@ -1,6 +1,6 @@
-package com.trustinlies.supernatural.util.capabilities.lumberjack;
+package com.trustinlies.supernatural.util.capabilities.combatskills.mage;
 
-public interface ILumberjack {
+public interface IMage {
 
     public void add(int points);
 

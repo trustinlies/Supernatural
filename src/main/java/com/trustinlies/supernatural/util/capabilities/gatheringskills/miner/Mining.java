@@ -1,4 +1,4 @@
-package com.trustinlies.supernatural.util.capabilities.miner;
+package com.trustinlies.supernatural.util.capabilities.gatheringskills.miner;
 
 public class Mining implements IMining {
 
@@ -23,5 +23,10 @@ public class Mining implements IMining {
     @Override
     public int getExp(){
         return this.mining;
+    }
+
+    public int getNextExp(){
+        int test =  (((this.getLevel()+1)^2+(this.getLevel()+1))/2*100-((this.getLevel()+1)*100));
+        return test;
     }
 }
