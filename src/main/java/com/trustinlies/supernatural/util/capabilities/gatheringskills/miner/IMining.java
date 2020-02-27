@@ -10,7 +10,4 @@ public interface IMining {
 
     public int getExp();
 
-    public int getNextExp();
-
-
 }

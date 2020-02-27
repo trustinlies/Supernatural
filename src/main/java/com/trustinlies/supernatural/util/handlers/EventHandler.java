@@ -1,6 +1,7 @@
 package com.trustinlies.supernatural.util.handlers;
 
 import com.trustinlies.supernatural.config.SkillsConfig;
+import com.trustinlies.supernatural.init.ItemInit;
 import com.trustinlies.supernatural.util.capabilities.combatskills.archer.ArcherProvider;
 import com.trustinlies.supernatural.util.capabilities.combatskills.archer.IArcher;
 import com.trustinlies.supernatural.util.capabilities.combatskills.knight.IKnight;
@@ -18,13 +19,16 @@ import com.trustinlies.supernatural.util.capabilities.gatheringskills.lumberjack
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.miner.IMining;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.miner.MiningProvider;
 import com.trustinlies.supernatural.util.lists.Lists;
+import com.trustinlies.supernatural.util.objects.guis.SkillsGUI;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
@@ -77,7 +81,6 @@ public class EventHandler {
 
             if (block == Blocks.LOG || block == Blocks.LOG2) {
                     lumberjack.add(2);
-                    //player.sendMessage(new TextComponentString("Gained 2 Lumberjack Experience from tree"));
                     growBlocks.remove(position);
             }
         }
@@ -86,14 +89,10 @@ public class EventHandler {
             if (block == Blocks.LOG || block == Blocks.LOG2) {
 
                 if (placedBlocks.contains(position) && growBlocks.contains(position)) {
-                    lumberjack.add(2);
-                    //player.sendMessage(new TextComponentString("Gained 2 Lumberjack Experience from grown tree"));
+                    lumberjack.add(5);
                     growBlocks.remove(position);
-                } /*else {
-                    player.sendMessage(new TextComponentString(TextFormatting.RED + "This Block was placed by a player"));
-                }*/
+                }
             }
-            //else player.sendMessage(new TextComponentString(TextFormatting.RED + "This Block was placed by a player"));
         }
 
         placedBlocks.remove(position);
@@ -112,8 +111,6 @@ public class EventHandler {
 
         }
 
-        //String m3 = String.format("%d.", farmer.getLevel());
-        //player.sendMessage(new TextComponentString(TextFormatting.GREEN + player.getDisplayNameString() + TextFormatting.RESET + " your Farmer level is " + TextFormatting.AQUA + m3));
 
     }
 
@@ -167,6 +164,11 @@ public class EventHandler {
 
     @SubscribeEvent
     public void onItemRightClick(PlayerInteractEvent.RightClickItem event){
+        Item item = event.getItemStack().getItem();
+        EntityPlayer player = event.getEntityPlayer();
+        if(item == ItemInit.HUNTERS_JOURNAL){
+            Minecraft.getMinecraft().displayGuiScreen(new SkillsGUI(player));
+        }
 
     }
 

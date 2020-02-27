@@ -2,6 +2,7 @@ package com.trustinlies.supernatural.util.objects.guis;
 
 import com.trustinlies.supernatural.Colors;
 import com.trustinlies.supernatural.util.Reference;
+import com.trustinlies.supernatural.util.SpecialFunctions;
 import com.trustinlies.supernatural.util.capabilities.combatskills.archer.ArcherProvider;
 import com.trustinlies.supernatural.util.capabilities.combatskills.archer.IArcher;
 import com.trustinlies.supernatural.util.capabilities.combatskills.knight.IKnight;
@@ -36,7 +37,7 @@ public class SkillsGUI extends GuiScreen {
     private final int bookImageHeight = 192;
     private final int bookImageWidth = 192;
     private int currPage = 0;
-    private static final int bookTotalPages = 2;
+    private static final int bookTotalPages = 15;
     private static ResourceLocation bookPageTextures = new ResourceLocation(Reference.MOD_ID +":textures/gui/book.png");
     private static String[] stringPageText = new String[bookTotalPages];
     private GuiButton buttonDone;
@@ -54,12 +55,21 @@ public class SkillsGUI extends GuiScreen {
         IMage mage = player.getCapability(MageProvider.MAGE_LEVEL, null);
         IThief thief = player.getCapability(ThiefProvider.THIEF_LEVEL, null);
 
-        //nt nextMiningLevel = mining.getLevel()+1;
-
-
         stringPageText[0] = TextFormatting.BOLD + "" + TextFormatting.DARK_AQUA + "     Supernatural \n      Professions" + "\n\n\n\n\n\n\n\n\n\n\n\n" +"Hunter: " + player.getDisplayNameString();
-        System.out.println(mining.getNextExp());
-        stringPageText[1] = TextFormatting.GOLD + "Miner Level: " + TextFormatting.RESET + mining.getLevel() + "\n" + TextFormatting.GOLD + "Miner Experience: " + TextFormatting.BLACK + mining.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + mining.getNextExp();
+        stringPageText[1] = TextFormatting.GOLD + "Miner Level: " + TextFormatting.RESET + mining.getLevel() + "\n" + TextFormatting.GOLD + "Miner Exp: " + TextFormatting.BLACK + mining.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(mining.getLevel());
+        stringPageText[2] = TextFormatting.GOLD + "Lumberjack Level: " + TextFormatting.RESET + lumberjack.getLevel() + "\n" + TextFormatting.GOLD + "Lumberjack Exp: " + TextFormatting.BLACK + lumberjack.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(lumberjack.getLevel());
+        stringPageText[3] = TextFormatting.GOLD + "Fisher Level: " + TextFormatting.RESET + fisher.getLevel() + "\n" + TextFormatting.GOLD + "Fisher Exp: " + TextFormatting.BLACK + fisher.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(fisher.getLevel());
+        stringPageText[4] = TextFormatting.GOLD + "Farmer Level: " + TextFormatting.RESET + farmer.getLevel() + "\n" + TextFormatting.GOLD + "Farmer Exp: " + TextFormatting.BLACK + farmer.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(farmer.getLevel());
+        stringPageText[5] = TextFormatting.GOLD + "Knight Level: " + TextFormatting.RESET + knight.getLevel() + "\n" + TextFormatting.GOLD + "Knight Exp: " + TextFormatting.BLACK + knight.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(knight.getLevel());
+        stringPageText[6] = TextFormatting.GOLD + "Archer Level: " + TextFormatting.RESET + archer.getLevel() + "\n" + TextFormatting.GOLD + "Archer Exp: " + TextFormatting.BLACK + archer.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(archer.getLevel());
+        stringPageText[7] = TextFormatting.GOLD + "Mage Level: " + TextFormatting.RESET + mage.getLevel() + "\n" + TextFormatting.GOLD + "Mage Exp: " + TextFormatting.BLACK + mage.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(mage.getLevel());
+        stringPageText[8] = TextFormatting.GOLD + "Thief Level: " + TextFormatting.RESET + thief.getLevel() + "\n" + TextFormatting.GOLD + "Thief Exp: " + TextFormatting.BLACK + thief.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(thief.getLevel());
+        stringPageText[9] = "";
+        stringPageText[10] = "";
+        stringPageText[11] = "";
+        stringPageText[12] = "";
+        stringPageText[13] = "";
+        stringPageText[14] = "";
 
     }
 
@@ -67,7 +77,7 @@ public class SkillsGUI extends GuiScreen {
     public void initGui()
     {
         // DEBUG
-        System.out.println("GuiMysteriousStranger initGUI()");
+        //System.out.println("GuiMysteriousStranger initGUI()");
         buttonList.clear();
         Keyboard.enableRepeatEvents(true);
 
