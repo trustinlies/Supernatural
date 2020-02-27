@@ -95,7 +95,6 @@ public class ContainerEssenceWell extends Container {
         Slot slot = this.inventorySlots.get(index);
         System.out.println("index: " + index);
 
-        //if(slot.getStack() == new ItemStack(ItemInit.FOCUS_EMPTY) || slot.getStack().getDisplayName().contains("_essence")) {
             if (slot != null && slot.getHasStack()) {
                 ItemStack itemstack1 = slot.getStack();
                 itemstack = itemstack1.copy();
@@ -141,6 +140,4 @@ public class ContainerEssenceWell extends Container {
 
             return itemstack;
         }
-        //return itemstack;
-    //}
 }

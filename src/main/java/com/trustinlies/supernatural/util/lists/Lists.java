@@ -20,13 +20,16 @@ public class Lists {
     public static final List<Item> ARCHER_WEAPONS = new ArrayList<>();
     public static final List<Item> MAGE_WEAPONS = new ArrayList<>();
 
-    //private static final Item
-
+    public static final List<Item> CARPENTER_ITEMS = new ArrayList<>();
+    public static final List<Item> BLACKSMITH_ITEMS = new ArrayList<>();
+    public static final List<Item> JEWELER_ITEMS = new ArrayList<>();
+    public static final List<Item> MASON_ITEMS = new ArrayList<>();
+    public static final List<Item> TAILOR_ITEMS = new ArrayList<>();
+    public static final List<Item> ALCHEMY_ITEMS = new ArrayList<>();
 
 
     public void setKnightWeapons(){
         KNIGHT_WEAPONS.add(Items.DIAMOND_AXE);
-        System.out.println("Added Diamond Axe");
         KNIGHT_WEAPONS.add(Items.DIAMOND_SWORD);
         KNIGHT_WEAPONS.add(Items.GOLDEN_AXE);
         KNIGHT_WEAPONS.add(Items.GOLDEN_SWORD);
@@ -36,6 +39,9 @@ public class Lists {
         KNIGHT_WEAPONS.add(Items.IRON_SWORD);
         KNIGHT_WEAPONS.add(Items.WOODEN_AXE);
         KNIGHT_WEAPONS.add(Items.WOODEN_SWORD);
+
+        CARPENTER_ITEMS.add(Items.STICK);
+        CARPENTER_ITEMS.add(Items.WOODEN_SWORD);
     }
 
 }

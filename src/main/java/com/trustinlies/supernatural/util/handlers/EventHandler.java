@@ -2,6 +2,7 @@ package com.trustinlies.supernatural.util.handlers;
 
 import com.trustinlies.supernatural.config.SkillsConfig;
 import com.trustinlies.supernatural.init.ItemInit;
+import com.trustinlies.supernatural.util.SpecialFunctions;
 import com.trustinlies.supernatural.util.capabilities.combatskills.archer.ArcherProvider;
 import com.trustinlies.supernatural.util.capabilities.combatskills.archer.IArcher;
 import com.trustinlies.supernatural.util.capabilities.combatskills.knight.IKnight;
@@ -23,28 +24,41 @@ import com.trustinlies.supernatural.util.objects.guis.SkillsGUI;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.ItemFishedEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
+import net.minecraftforge.items.ItemHandlerHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+import static net.minecraft.client.util.ITooltipFlag.*;
 
 @Mod.EventBusSubscriber
 public class EventHandler {
@@ -284,6 +298,76 @@ public class EventHandler {
 
         }
 
+    }
+
+    @SubscribeEvent
+    public void onCraft(PlayerEvent.ItemCraftedEvent event){
+        //event.getStack().set;
+        ItemStack stack = event.crafting;
+        ItemStack slot0 = event.craftMatrix.getStackInSlot(0);
+        ItemStack slot1 = event.craftMatrix.getStackInSlot(1);
+        ItemStack slot2 = event.craftMatrix.getStackInSlot(2);
+        ItemStack slot3 = event.craftMatrix.getStackInSlot(3);
+        ItemStack slot4 = event.craftMatrix.getStackInSlot(4);
+        ItemStack slot5 = event.craftMatrix.getStackInSlot(5);
+        ItemStack slot6 = event.craftMatrix.getStackInSlot(6);
+        ItemStack slot7 = event.craftMatrix.getStackInSlot(7);
+        ItemStack slot8 = event.craftMatrix.getStackInSlot(8);
+        ItemStack result = event.crafting;
+
+        //System.out.println(slot0.getDisplayName() + slot1.getDisplayName() + slot2.getDisplayName() + slot3.getDisplayName() + slot4.getDisplayName() + slot5.getDisplayName() + slot6.getDisplayName() + slot7.getDisplayName() + slot8.getDisplayName() + slot9.getDisplayName());
+
+
+        if(Lists.CARPENTER_ITEMS.contains(event.crafting.getItem())) {
+            result = SpecialFunctions.carpenterItem(slot0, slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, stack, event.player);
+            event.player.inventory.setItemStack(result);
+
+
+            NBTTagCompound test = stack.getTagCompound();
+
+
+/*
+            if (event.craftMatrix.getStackInSlot(7).getItem() == Items.STICK) {
+                if (event.craftMatrix.getStackInSlot(7).getTagCompound() != null) {
+                    NBTTagCompound dcheck = (NBTTagCompound) event.craftMatrix.getStackInSlot(7).getTagCompound().getTag("display");
+                    if (dcheck.getTag("Lore").toString().contains("Crafted")) {
+                        ItemStack result = event.crafting;
+                        result.setTagCompound(nbt);
+                        event.player.inventory.setItemStack(result);
+
+                    }
+                } else {
+                    event.player.inventory.setItemStack(new ItemStack(Items.DIAMOND));
+                }
+
+            } else {
+                event.player.inventory.setItemStack(new ItemStack(Items.DIAMOND));
+            }
+
+
+            if (event.crafting.getItem() == Items.STICK) {
+                event.crafting.setTagCompound(nbt);
+            }
+        }
+
+        if(event.crafting.getTagCompound().getString("Lore") == null){
+            System.out.println("SUCCESS");
+            NBTTagCompound dcheck = (NBTTagCompound) event.crafting.getTagCompound().getTag("display");
+            System.out.println(dcheck.getTag("Lore"));
+            System.out.println(dcheck.getTag("Lore").toString());
+            if(dcheck.getTag("Lore").toString().toLowerCase().contains("crafted")){
+                event.player.inventory.setItemStack(new ItemStack(Items.DIAMOND)); //Replaces Item in Hand
+            }
+        }*/
+            //event.player.addItemStackToInventory(stack);
+
+        /*
+        ItemStack itemStack = SpecialFunctions.customItem(event.getStack(), event.player);
+        itemStack.setTagInfo("Lore", );
+        event.player.addItemStackToInventory();
+        */
+
+        }
     }
 
 }
