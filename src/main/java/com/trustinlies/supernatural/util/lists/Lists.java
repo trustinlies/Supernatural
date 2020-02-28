@@ -28,7 +28,7 @@ public class Lists {
     public static final List<Item> ALCHEMY_ITEMS = new ArrayList<>();
 
 
-    public void setKnightWeapons(){
+    public void setLists(){
         KNIGHT_WEAPONS.add(Items.DIAMOND_AXE);
         KNIGHT_WEAPONS.add(Items.DIAMOND_SWORD);
         KNIGHT_WEAPONS.add(Items.GOLDEN_AXE);
@@ -40,8 +40,11 @@ public class Lists {
         KNIGHT_WEAPONS.add(Items.WOODEN_AXE);
         KNIGHT_WEAPONS.add(Items.WOODEN_SWORD);
 
-        CARPENTER_ITEMS.add(Items.STICK);
         CARPENTER_ITEMS.add(Items.WOODEN_SWORD);
+        CARPENTER_ITEMS.add(Items.WOODEN_AXE);
+        CARPENTER_ITEMS.add(Items.WOODEN_SHOVEL);
+        CARPENTER_ITEMS.add(Items.WOODEN_PICKAXE);
+        CARPENTER_ITEMS.add(Items.WOODEN_HOE);
     }
 
 }

@@ -11,6 +11,8 @@ import com.trustinlies.supernatural.util.capabilities.combatskills.mage.IMage;
 import com.trustinlies.supernatural.util.capabilities.combatskills.mage.MageProvider;
 import com.trustinlies.supernatural.util.capabilities.combatskills.thief.IThief;
 import com.trustinlies.supernatural.util.capabilities.combatskills.thief.ThiefProvider;
+import com.trustinlies.supernatural.util.capabilities.craftingskills.carpenter.CarpenterProvider;
+import com.trustinlies.supernatural.util.capabilities.craftingskills.carpenter.ICarpenter;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.FarmerProvider;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.IFarmer;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher.FisherProvider;
@@ -54,6 +56,7 @@ public class SkillsGUI extends GuiScreen {
         IArcher archer = player.getCapability(ArcherProvider.ARCHER_LEVEL, null);
         IMage mage = player.getCapability(MageProvider.MAGE_LEVEL, null);
         IThief thief = player.getCapability(ThiefProvider.THIEF_LEVEL, null);
+        ICarpenter carpenter = player.getCapability(CarpenterProvider.CARPENTER_LEVEL, null);
 
         stringPageText[0] = TextFormatting.BOLD + "" + TextFormatting.DARK_AQUA + "     Supernatural \n      Professions" + "\n\n\n\n\n\n\n\n\n\n\n\n" +"Hunter: " + player.getDisplayNameString();
         stringPageText[1] = TextFormatting.GOLD + "Miner Level: " + TextFormatting.RESET + mining.getLevel() + "\n" + TextFormatting.GOLD + "Miner Exp: " + TextFormatting.BLACK + mining.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(mining.getLevel());
@@ -64,7 +67,7 @@ public class SkillsGUI extends GuiScreen {
         stringPageText[6] = TextFormatting.GOLD + "Archer Level: " + TextFormatting.RESET + archer.getLevel() + "\n" + TextFormatting.GOLD + "Archer Exp: " + TextFormatting.BLACK + archer.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(archer.getLevel());
         stringPageText[7] = TextFormatting.GOLD + "Mage Level: " + TextFormatting.RESET + mage.getLevel() + "\n" + TextFormatting.GOLD + "Mage Exp: " + TextFormatting.BLACK + mage.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(mage.getLevel());
         stringPageText[8] = TextFormatting.GOLD + "Thief Level: " + TextFormatting.RESET + thief.getLevel() + "\n" + TextFormatting.GOLD + "Thief Exp: " + TextFormatting.BLACK + thief.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(thief.getLevel());
-        stringPageText[9] = "";
+        stringPageText[9] = TextFormatting.GOLD + "Carpenter Level: " + TextFormatting.RESET + carpenter.getLevel() + "\n" + TextFormatting.GOLD + "Carpenter Exp: " + TextFormatting.BLACK + carpenter.getExp() + TextFormatting.GOLD + "\nNext Level at: " + TextFormatting.BLACK + SpecialFunctions.nextLevel(carpenter.getLevel());
         stringPageText[10] = "";
         stringPageText[11] = "";
         stringPageText[12] = "";

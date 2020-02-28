@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Quartzite",
+    "stateString": "supernatural:quartzite",
+    "stateId": 258,
+    "order": 1,
+    "color": {
+      "r": 0,
+      "g": 166,
+      "b": 255
+    },
+    "drawing": true
+  }
+]

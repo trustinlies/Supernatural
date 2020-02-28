@@ -6,6 +6,7 @@ import com.trustinlies.supernatural.util.capabilities.combatskills.archer.Archer
 import com.trustinlies.supernatural.util.capabilities.combatskills.knight.KnightProvider;
 import com.trustinlies.supernatural.util.capabilities.combatskills.mage.MageProvider;
 import com.trustinlies.supernatural.util.capabilities.combatskills.thief.ThiefProvider;
+import com.trustinlies.supernatural.util.capabilities.craftingskills.carpenter.CarpenterProvider;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.FarmerProvider;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.fisher.FisherProvider;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.lumberjack.LumberjackProvider;
@@ -26,6 +27,7 @@ public class CapabilityHandler {
     public static final ResourceLocation ARCHER_SKILL = new ResourceLocation(Reference.MOD_ID, "archerSkill");
     public static final ResourceLocation MAGE_SKILL = new ResourceLocation(Reference.MOD_ID, "mageSkill");
     public static final ResourceLocation THIEF_SKILL = new ResourceLocation(Reference.MOD_ID, "thiefSkill");
+    public static final ResourceLocation CARPENTER_SKILL = new ResourceLocation(Reference.MOD_ID, "carpenterSkill");
 
     @SubscribeEvent
     public void attachCapability(AttachCapabilitiesEvent<Entity> event) {
@@ -40,6 +42,8 @@ public class CapabilityHandler {
             event.addCapability(ARCHER_SKILL, new ArcherProvider());
             event.addCapability(MAGE_SKILL, new MageProvider());
             event.addCapability(THIEF_SKILL, new ThiefProvider());
+            event.addCapability(CARPENTER_SKILL, new CarpenterProvider());
+
 
 
         }

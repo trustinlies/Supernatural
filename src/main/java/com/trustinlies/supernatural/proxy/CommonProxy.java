@@ -12,6 +12,9 @@ import com.trustinlies.supernatural.util.capabilities.combatskills.mage.MageStor
 import com.trustinlies.supernatural.util.capabilities.combatskills.thief.IThief;
 import com.trustinlies.supernatural.util.capabilities.combatskills.thief.Thief;
 import com.trustinlies.supernatural.util.capabilities.combatskills.thief.ThiefStorage;
+import com.trustinlies.supernatural.util.capabilities.craftingskills.carpenter.Carpenter;
+import com.trustinlies.supernatural.util.capabilities.craftingskills.carpenter.CarpenterStorage;
+import com.trustinlies.supernatural.util.capabilities.craftingskills.carpenter.ICarpenter;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.Farmer;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.FarmerStorage;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.farmer.IFarmer;
@@ -26,8 +29,12 @@ import com.trustinlies.supernatural.util.capabilities.CapabilityHandler;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.miner.IMining;
 import com.trustinlies.supernatural.util.capabilities.gatheringskills.miner.MiningStorage;
 import net.minecraft.item.Item;
+import net.minecraft.util.IThreadListener;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.CapabilityManager;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class CommonProxy {
 
@@ -48,6 +55,7 @@ public class CommonProxy {
         CapabilityManager.INSTANCE.register(IArcher.class, new ArcherStorage(), Archer::new);
         CapabilityManager.INSTANCE.register(IMage.class, new MageStorage(), Mage::new);
         CapabilityManager.INSTANCE.register(IThief.class, new ThiefStorage(), Thief::new);
+        CapabilityManager.INSTANCE.register(ICarpenter.class, new CarpenterStorage(), Carpenter::new);
 
         //Register Capability Handler
         MinecraftForge.EVENT_BUS.register(new CapabilityHandler());

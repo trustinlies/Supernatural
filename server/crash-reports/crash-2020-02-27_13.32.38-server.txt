@@ -1,0 +1,102 @@
+---- Minecraft Crash Report ----
+// Uh... Did I do that?
+
+Time: 2/27/20 1:32 PM
+Description: Ticking player
+
+java.lang.UnsupportedOperationException: Attempted to call Event#setCanceled() on a non-cancelable event of type: net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemPickupEvent
+	at net.minecraftforge.fml.common.eventhandler.Event.setCanceled(Event.java:96)
+	at com.trustinlies.supernatural.util.handlers.EventHandler.onTest(EventHandler.java:300)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_23_EventHandler_onTest_ItemPickupEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.fml.common.FMLCommonHandler.firePlayerItemPickupEvent(FMLCommonHandler.java:590)
+	at net.minecraft.entity.item.EntityItem.onCollideWithPlayer(EntityItem.java:442)
+	at net.minecraft.entity.player.EntityPlayer.collideWithPlayer(EntityPlayer.java:664)
+	at net.minecraft.entity.player.EntityPlayer.onLivingUpdate(EntityPlayer.java:635)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2398)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:272)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:423)
+	at net.minecraft.network.NetHandlerPlayServer.update(NetHandlerPlayServer.java:185)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.update(NetworkDispatcher.java:212)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:307)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:197)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:865)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraftforge.fml.common.eventhandler.Event.setCanceled(Event.java:96)
+	at com.trustinlies.supernatural.util.handlers.EventHandler.onTest(EventHandler.java:300)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_23_EventHandler_onTest_ItemPickupEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.fml.common.FMLCommonHandler.firePlayerItemPickupEvent(FMLCommonHandler.java:590)
+	at net.minecraft.entity.item.EntityItem.onCollideWithPlayer(EntityItem.java:442)
+	at net.minecraft.entity.player.EntityPlayer.collideWithPlayer(EntityPlayer.java:664)
+	at net.minecraft.entity.player.EntityPlayer.onLivingUpdate(EntityPlayer.java:635)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:2398)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:272)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 395
+	Entity Name: trustinlies
+	Entity's Exact location: -227.00, 69.00, 262.65
+	Entity's Block location: World: (-227,69,262), Chunk: (at 13,4,6 in -15,16; contains blocks -240,0,256 to -225,255,271), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:423)
+	at net.minecraft.network.NetHandlerPlayServer.update(NetHandlerPlayServer.java:185)
+	at net.minecraftforge.fml.common.network.handshake.NetworkDispatcher$1.update(NetworkDispatcher.java:212)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:307)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@1fc775f4
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:197)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:865)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_241, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 408659352 bytes (389 MB) / 1056964608 bytes (1008 MB) up to 6192889856 bytes (5906 MB)
+	JVM Flags: 3 total; -Xmx6644m -Xms256m -XX:PermSize=256m
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID           | Version      | Source                           | Signature |
+	|:--------- |:------------ |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft    | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp          | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML          | 8.0.99.99    | forgeSrc-1.12.2-14.23.5.2768.jar | None      |
+	| UCHIJAAAA | forge        | 14.23.5.2768 | forgeSrc-1.12.2-14.23.5.2768.jar | None      |
+	| UCHIJAAAA | supernatural | 0.0.8        | main                             | None      |
+	| UCHIJAAAA | xray         | 2.0.0        | xray-1.12.2-1.6.0.jar            | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['trustinlies'/395, l='Testing 4', x=-227.00, y=69.00, z=262.65]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

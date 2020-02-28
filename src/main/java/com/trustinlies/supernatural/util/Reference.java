@@ -8,7 +8,8 @@ public class Reference {
     public static final String ACCEPTED_VERSIONS = "[1.12.2]";
 
     public static final String CLIENT_PROXY_CLASS = "com.trustinlies.supernatural.proxy.ClientProxy";
-    public static final String COMMON_PROXY_CLASS = "com.trustinlies.supernatural.proxy.ServerProxy";
+    public static final String COMMON_PROXY_CLASS = "com.trustinlies.supernatural.proxy.CommonProxy";
+    public static final String SERVER_PROXY_CLASS = "com.trustinlies.supernatural.proxy.ServerProxy";
 
     public static final int GUI_ESSENCE_WELL = 2;
     public static final int GUI_PROFESSION_BOOK = 3;

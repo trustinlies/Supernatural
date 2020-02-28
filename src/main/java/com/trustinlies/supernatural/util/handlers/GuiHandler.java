@@ -22,6 +22,7 @@ public class GuiHandler implements IGuiHandler {
     @Nullable
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+        /*
         TileEntity tileEntity = world.getTileEntity(new BlockPos(x,y,z));
         if (tileEntity != null){
             if(ID == Reference.GUI_ESSENCE_WELL){
@@ -31,6 +32,8 @@ public class GuiHandler implements IGuiHandler {
         if(ID == Reference.GUI_PROFESSION_BOOK){
             return new SkillsGUI(player);
         }
+
+         */
         return null;
     }
 

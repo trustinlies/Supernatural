@@ -1,0 +1,117 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 2/25/20 12:39 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.trustinlies.supernatural.util.handlers.EventHandler.onEntityDeath(EventHandler.java:233)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_20_EventHandler_onEntityDeath_LivingDeathEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.common.ForgeHooks.onLivingDeath(ForgeHooks.java:601)
+	at net.minecraft.entity.EntityLivingBase.onDeath(EntityLivingBase.java:1284)
+	at net.minecraft.entity.monster.EntityZombie.onDeath(EntityZombie.java:606)
+	at net.minecraft.entity.EntityLivingBase.attackEntityFrom(EntityLivingBase.java:1129)
+	at net.minecraft.entity.monster.EntityMob.attackEntityFrom(EntityMob.java:80)
+	at net.minecraft.entity.monster.EntityZombie.attackEntityFrom(EntityZombie.java:259)
+	at net.minecraft.entity.projectile.EntityArrow.onHit(EntityArrow.java:391)
+	at net.minecraft.entity.projectile.EntityArrow.onUpdate(EntityArrow.java:286)
+	at net.minecraft.entity.projectile.EntityTippedArrow.onUpdate(EntityTippedArrow.java:110)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2171)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2130)
+	at net.minecraft.world.World.updateEntities(World.java:1931)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.trustinlies.supernatural.util.handlers.EventHandler.onEntityDeath(EventHandler.java:233)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler_20_EventHandler_onEntityDeath_LivingDeathEvent.invoke(.dynamic)
+	at net.minecraftforge.fml.common.eventhandler.ASMEventHandler.invoke(ASMEventHandler.java:90)
+	at net.minecraftforge.fml.common.eventhandler.EventBus.post(EventBus.java:182)
+	at net.minecraftforge.common.ForgeHooks.onLivingDeath(ForgeHooks.java:601)
+	at net.minecraft.entity.EntityLivingBase.onDeath(EntityLivingBase.java:1284)
+	at net.minecraft.entity.monster.EntityZombie.onDeath(EntityZombie.java:606)
+	at net.minecraft.entity.EntityLivingBase.attackEntityFrom(EntityLivingBase.java:1129)
+	at net.minecraft.entity.monster.EntityMob.attackEntityFrom(EntityMob.java:80)
+	at net.minecraft.entity.monster.EntityZombie.attackEntityFrom(EntityZombie.java:259)
+	at net.minecraft.entity.projectile.EntityArrow.onHit(EntityArrow.java:391)
+	at net.minecraft.entity.projectile.EntityArrow.onUpdate(EntityArrow.java:286)
+	at net.minecraft.entity.projectile.EntityTippedArrow.onUpdate(EntityTippedArrow.java:110)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2171)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:871)
+	at net.minecraft.world.World.updateEntity(World.java:2130)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:arrow (net.minecraft.entity.projectile.EntityTippedArrow)
+	Entity ID: 943
+	Entity Name: Arrow
+	Entity's Exact location: -290.64, 72.52, 215.54
+	Entity's Block location: World: (-291,72,215), Chunk: (at 13,4,7 in -19,13; contains blocks -304,0,208 to -289,255,223), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Entity's Momentum: 0.19, -2.72, 1.25
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1931)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:643)
+
+-- Affected level --
+Details:
+	Level name: Testing 4
+	All players: 1 total; [EntityPlayerMP['Player85'/619, l='Testing 4', x=-290.64, y=71.00, z=215.54]]
+	Chunk stats: ServerChunkCache: 625 Drop: 0
+	Level seed: 5970471495623265483
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (-236,64,248), Chunk: (at 4,4,8 in -15,15; contains blocks -240,0,240 to -225,255,255), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,0,0 to -1,255,511)
+	Level time: 263045 game time, 5550 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 2641 (now: true), thunder time: 54062 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:842)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:743)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:192)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:592)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_241, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 739010392 bytes (704 MB) / 1019215872 bytes (972 MB) up to 6192889856 bytes (5906 MB)
+	JVM Flags: 3 total; -Xmx6644m -Xms256m -XX:PermSize=256m
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State     | ID           | Version      | Source                           | Signature |
+	|:--------- |:------------ |:------------ |:-------------------------------- |:--------- |
+	| UCHIJAAAA | minecraft    | 1.12.2       | minecraft.jar                    | None      |
+	| UCHIJAAAA | mcp          | 9.42         | minecraft.jar                    | None      |
+	| UCHIJAAAA | FML          | 8.0.99.99    | forgeSrc-1.12.2-14.23.5.2768.jar | None      |
+	| UCHIJAAAA | forge        | 14.23.5.2768 | forgeSrc-1.12.2-14.23.5.2768.jar | None      |
+	| UCHIJAAAA | supernatural | 0.0.5        | main                             | None      |
+	| UCHIJAAAA | xray         | 2.0.0        | xray-1.12.2-1.6.0.jar            | None      |
+
+	Loaded coremods (and transformers): 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player85'/619, l='Testing 4', x=-290.64, y=71.00, z=215.54]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
